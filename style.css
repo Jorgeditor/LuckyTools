@@ -851,3 +851,61 @@ footer p {
 .social-links-contact a:hover {
     color: #fff;
 }
+
+/* Pricing & Licensing Section */
+.license-info-simple {
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.license-info-simple i {
+    color: var(--accent-color);
+}
+
+.licensing-section {
+    padding: 100px 0;
+}
+
+.licensing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.license-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.license-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.license-icon {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 24px;
+}
+
+.license-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.license-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
