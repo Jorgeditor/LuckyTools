@@ -65,6 +65,20 @@ body {
     min-width: 177.77vh; /* 16:9 Aspect Ratio */
     transform: translate(-50%, -50%) scale(1.15);
     pointer-events: none;
+    opacity: 0;
+    animation: youtube-slide-down 2.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes youtube-slide-down {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(1.15);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
 }
 
 /* Background Grid Overlay (Premium RGB Glow) */
