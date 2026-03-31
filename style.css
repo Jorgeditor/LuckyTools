@@ -43,6 +43,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0.35; /* Keep text highly readable */
+    background-color: #1a1a1a; /* Placeholder color so the container is visible while video is empty */
 }
 
 .video-overlay {
@@ -58,8 +59,8 @@ body {
 /* Mute Toggle Button */
 .video-mute-btn {
     position: absolute;
-    bottom: -30px; /* Sits nicely in the lower right corner of the hero section */
-    right: 20px;
+    bottom: 30px; /* Anchored to bottom right of the 100vh video container */
+    right: 40px;
     background: rgba(5, 5, 5, 0.4);
     border: 1px solid rgba(255, 159, 28, 0.5); /* subtle premium orange border */
     color: var(--text-color);
