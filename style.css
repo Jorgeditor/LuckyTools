@@ -536,6 +536,29 @@ footer p {
     font-family: 'Outfit', sans-serif;
 }
 
+.discount-code {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: -15px;
+    text-align: center;
+    background: rgba(255, 159, 28, 0.05);
+    border: 1px dashed rgba(255, 159, 28, 0.3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.code-highlight {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 0 4px;
+}
+
 /* Features Grid */
 .features-grid {
     display: grid;
