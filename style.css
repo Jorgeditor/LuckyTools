@@ -1,6 +1,10 @@
 /* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;800&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg-color: #050505;
     --accent-color: #ff9f1c; /* premium orange */
@@ -875,6 +879,19 @@ footer p {
 
 .license-info-simple i {
     color: var(--accent-color);
+}
+
+.license-info-simple .more-info-link {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    margin-left: 5px;
+}
+
+.license-info-simple .more-info-link:hover {
+    opacity: 0.8;
 }
 
 .licensing-section {
