@@ -3,8 +3,8 @@
 
 :root {
     --bg-color: #050505;
-    --accent-color: #FFD84D;
-    --accent-glow: rgba(255, 216, 77, 0.4);
+    --accent-color: #ff9f1c; /* premium orange */
+    --accent-glow: rgba(255, 159, 28, 0.4);
     --text-color: #e5e7eb;
     --text-muted: #9ca3af;
     --card-bg: rgba(20, 20, 20, 0.8);
@@ -132,7 +132,18 @@ h1 {
 }
 
 h1 span {
-    color: var(--accent-color);
+    background: linear-gradient(90deg, #ff9f1c, #ffcc00, #ff5722, #ff9f1c);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: premium-orange-rgb 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes premium-orange-rgb {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
 }
 
 .hero-card p {
@@ -531,7 +542,7 @@ footer p {
 }
 
 .reviews-header h2 span {
-    color: #5d9cec; /* Blue-ish color matching screenshot */
+    color: var(--accent-color);
 }
 
 .reviews-header p {
