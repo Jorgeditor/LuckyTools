@@ -92,6 +92,17 @@
                 </div>
             </div>
         </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section container reveal reveal-up" style="text-align: center; margin-top: 100px; padding-bottom: 60px;">
+            <h2 style="font-family: 'Outfit', sans-serif; font-size: 32px; margin-bottom: 20px;">Ready to boost your workflow?</h2>
+            <div class="discount-code" id="discountBox" title="Click to copy code">
+                Use code: <span class="code-highlight" id="promoCode">BUSCOEDITOR</span> for the $69.99 launch deal!
+            </div>
+            <div style="margin-top: 30px;">
+                <a href="index.html" class="btn-download" style="display: inline-flex;">Back to Home</a>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -118,6 +129,23 @@
             const revealElements = document.querySelectorAll('.reveal');
             revealElements.forEach(el => observer.observe(el));
         });
+
+        // Click-to-copy for discount code
+        const discountBox = document.getElementById('discountBox');
+        if (discountBox) {
+            discountBox.addEventListener('click', () => {
+                const code = document.getElementById('promoCode').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = discountBox.innerHTML;
+                    discountBox.classList.add('copied');
+                    discountBox.innerHTML = '<i class="fas fa-check"></i> ' + code + ' Copied!';
+                    setTimeout(() => {
+                        discountBox.classList.remove('copied');
+                        discountBox.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        }
     </script>
 </body>
 </html>

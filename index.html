@@ -62,7 +62,7 @@
                     <div class="hero-actions">
                         <div class="main-actions">
                             <div class="price-box">
-                                <div class="coming-soon bounce-anim">Launch Promo</div>
+                                <div class="coming-soon bounce-anim">Limited Time Deal</div>
                                 <span class="price-strikethrough">$149.99</span>
                                 <span class="price-current">$69.99</span>
                             </div>
@@ -73,8 +73,8 @@
                         <div class="license-info-simple">
                             <i class="fas fa-check-circle"></i> One-time payment. Perpetual access. <a href="licenses.html" class="more-info-link">1 year of maintenance included.</a>
                         </div>
-                        <div class="discount-code">
-                            Use code: <span class="code-highlight">BUSCOEDITOR</span> for a discount!
+                        <div class="discount-code" id="discountBox" title="Click to copy code">
+                            Use code: <span class="code-highlight" id="promoCode">BUSCOEDITOR</span> to get this price!
                         </div>
                     </div>
                 </div>
@@ -524,6 +524,23 @@
             const revealElements = document.querySelectorAll('.reveal');
             revealElements.forEach(el => observer.observe(el));
         });
+
+        // Click-to-copy for discount code
+        const discountBox = document.getElementById('discountBox');
+        if (discountBox) {
+            discountBox.addEventListener('click', () => {
+                const code = document.getElementById('promoCode').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = discountBox.innerHTML;
+                    discountBox.classList.add('copied');
+                    discountBox.innerHTML = '<i class="fas fa-check"></i> ' + code + ' Copied!';
+                    setTimeout(() => {
+                        discountBox.classList.remove('copied');
+                        discountBox.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        }
     </script>
 </body>
 </html>

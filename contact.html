@@ -41,10 +41,32 @@
                     <div class="social-links-contact">
                         <a href="https://x.com/jorgeditor" target="_blank">X (Twitter)</a>
                     </div>
+                    <div class="discount-code" id="discountBox" title="Click to copy code" style="margin-top: 40px;">
+                        Use code: <span class="code-highlight" id="promoCode">BUSCOEDITOR</span> for the $69.99 deal!
+                    </div>
                 </div>
             </section>
         </div>
     </main>
+
+    <script>
+        // Click-to-copy for discount code
+        const discountBox = document.getElementById('discountBox');
+        if (discountBox) {
+            discountBox.addEventListener('click', () => {
+                const code = document.getElementById('promoCode').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = discountBox.innerHTML;
+                    discountBox.classList.add('copied');
+                    discountBox.innerHTML = '<i class="fas fa-check"></i> ' + code + ' Copied!';
+                    setTimeout(() => {
+                        discountBox.classList.remove('copied');
+                        discountBox.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        }
+    </script>
 
     <footer class="footer-bottom">
         <div class="container">

@@ -539,24 +539,52 @@ footer p {
 .discount-code {
     font-size: 14px;
     color: var(--text-muted);
-    margin-top: -15px;
+    margin-top: 20px; /* Adjusted spacing */
     text-align: center;
-    background: rgba(255, 159, 28, 0.05);
-    border: 1px dashed rgba(255, 159, 28, 0.3);
-    padding: 8px 16px;
-    border-radius: 8px;
-    display: inline-block;
+    background: rgba(255, 159, 28, 0.03);
+    border: 1px dashed rgba(255, 159, 28, 0.2);
+    padding: 12px 24px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    user-select: none;
+}
+
+.discount-code:hover {
+    background: rgba(255, 159, 28, 0.08);
+    border-color: rgba(255, 159, 28, 0.5);
+    transform: translateY(-2px);
+    color: var(--text-color);
+}
+
+.discount-code.copied {
+    border-style: solid;
+    border-color: #4ade80; /* green */
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
 }
 
 .code-highlight {
     color: var(--accent-color);
-    font-weight: 700;
-    font-family: monospace;
-    font-size: 16px;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin: 0 4px;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background: rgba(255, 159, 28, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 159, 28, 0.2);
+    animation: code-pulse 2s infinite;
+    pointer-events: none; /* so click hits the box */
+}
+
+@keyframes code-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 159, 28, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 159, 28, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 159, 28, 0); }
 }
 
 /* Features Grid */
