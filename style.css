@@ -221,21 +221,21 @@ h1 span {
 
 .section-divider {
     text-align: center;
-    margin: 80px 0;
+    margin: 100px 0;
 }
 
 .section-divider h2 {
     font-family: 'Outfit', sans-serif;
     font-size: 14px;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     color: var(--accent-color);
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin: 30px 0;
 }
 
 .section-divider .line {
     width: 1px;
-    height: 80px;
+    height: 100px;
     background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
     margin: 0 auto;
 }
@@ -487,13 +487,14 @@ footer p {
     border: 1px solid var(--card-border);
     padding: 30px;
     border-radius: 16px;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(255, 159, 28, 0.15);
+    box-shadow: 0 15px 35px rgba(255, 159, 28, 0.2);
 }
 
 .feature-card h4 {
@@ -662,13 +663,14 @@ footer p {
     width: 350px;
     flex-shrink: 0;
     white-space: normal;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
 }
 
 .review-card:hover {
-    border-color: #ff9f1c; /* premium orange */
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 159, 28, 0.15);
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 159, 28, 0.2);
 }
 
 .quote-mark {
@@ -934,13 +936,14 @@ footer p {
     padding: 40px;
     border-radius: 24px;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
 }
 
 .license-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(255, 159, 28, 0.15);
+    box-shadow: 0 15px 35px rgba(255, 159, 28, 0.2);
 }
 
 .license-icon {
@@ -964,7 +967,8 @@ footer p {
 /* Reveal Animation System */
 .reveal {
     opacity: 0;
-    transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
     will-change: transform, opacity;
 }
 
