@@ -11,7 +11,7 @@ html {
     --accent-glow: rgba(255, 159, 28, 0.4);
     --text-color: #e5e7eb;
     --text-muted: #9ca3af;
-    --card-bg: rgba(20, 20, 20, 0.8);
+    --card-bg: #0c0c0c;
     --card-border: rgba(255, 255, 255, 0.05);
     --glass-bg: rgba(255, 255, 255, 0.03);
     --container-width: 1200px;
