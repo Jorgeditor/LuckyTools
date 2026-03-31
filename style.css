@@ -197,7 +197,7 @@ h1 span {
 }
 
 .category-section {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .category-title {
@@ -221,7 +221,7 @@ h1 span {
 
 .section-divider {
     text-align: center;
-    margin: 40px 0;
+    margin: 0 0 60px 0;
 }
 
 .section-divider h2 {
@@ -245,7 +245,7 @@ h1 span {
     display: flex;
     align-items: center;
     gap: 80px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .feature-row.reverse {
@@ -567,7 +567,7 @@ footer p {
 
 /* Reviews Section */
 .reviews-section {
-    padding: 20px 0px 40px;
+    padding: 20px 0px 0;
 }
 
 .reviews-header {
@@ -917,7 +917,7 @@ footer p {
 }
 
 .licensing-section {
-    padding: 40px 0 100px 0;
+    padding: 0 0 100px 0;
 }
 
 .licensing-section .section-divider {
