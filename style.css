@@ -539,14 +539,16 @@ footer p {
 .discount-code {
     font-size: 14px;
     color: var(--text-muted);
-    margin-top: 20px; /* Adjusted spacing */
+    margin: 20px auto 0 auto; /* Added auto margins for centering */
     text-align: center;
     background: rgba(255, 159, 28, 0.03);
     border: 1px dashed rgba(255, 159, 28, 0.2);
     padding: 12px 24px;
     border-radius: 12px;
-    display: inline-flex;
+    display: flex; /* Changed from inline-flex to flex */
+    width: fit-content; /* Ensure it only takes needed width */
     align-items: center;
+    justify-content: center;
     gap: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
