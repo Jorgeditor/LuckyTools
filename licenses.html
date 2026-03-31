@@ -27,23 +27,68 @@
         </nav>
     </header>
 
-    <main>
-        <section class="licensing-section container" style="min-height: 70vh; display: flex; align-items: center; justify-content: center; margin-top: 5vh;">
-            <div class="licensing-grid" style="margin-top: 0; width: 100%;">
-                <div class="license-card reveal reveal-zoom active">
+    <main class="licenses-main">
+        <!-- Manage Licenses Portal Section -->
+        <section class="portal-section container reveal reveal-up active">
+            <h2>Manage Your Licenses</h2>
+            <p class="portal-desc">Access your LuckyTools purchases and license keys securely through our LemonSqueezy portal. Simply log in with the email you used at checkout.</p>
+            <a href="#" class="portal-btn">
+                <i class="fas fa-key"></i> Open Customer Portal
+            </a>
+            <p class="portal-note"><span class="purple-dot"></span> You may be asked to verify your email before accessing your licenses.</p>
+        </section>
+
+        <!-- Existing License Cards -->
+        <section class="licensing-section container reveal reveal-up active">
+            <div class="licensing-grid" style="width: 100%;">
+                <div class="license-card">
                     <div class="license-icon"><i class="fas fa-gem"></i></div>
                     <h3>One-Time Purchase</h3>
                     <p>Buy once, own it forever. You get a perpetual license for the version you purchase—no forced subscriptions, no revoked access.</p>
                 </div>
-                <div class="license-card reveal reveal-zoom active">
+                <div class="license-card">
                     <div class="license-icon"><i class="fas fa-sync"></i></div>
                     <h3>1 Year of Updates</h3>
                     <p>Your purchase includes 12 months of constant refinements, bug fixes, and new features to keep your workflow cutting-edge.</p>
                 </div>
-                <div class="license-card reveal reveal-zoom active">
+                <div class="license-card">
                     <div class="license-icon"><i class="fas fa-redo"></i></div>
                     <h3>Maintenance Renewal</h3>
                     <p>Maintenance and updates are structured by calendar year. Starting every January 1st, a new version cycle begins. While your existing tools remain accessible for perpetual use, continued access to software refinements and prioritized technical support for the new yearly cycle requires a $35 renewal. For technical assistance or to coordinate your maintenance renewal, please reach out via my official communication channels.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section container reveal reveal-up active">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        How do I deactivate my license?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To deactivate your license, please visit your LemonSqueezy portal, navigate to the licenses tab, and click 'Deactivate' next to the active machine you wish to remove.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        I can't activate my product?!
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you're having trouble activating, ensure your Premiere Pro is updated to v26 or higher, check your network connection, and make sure you have available seats on your key. You can also try resetting the plugin from the extensions menu.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        How many seats does my key have?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each LuckyTools license key grants you access on up to two machines (e.g., your studio desktop and your travel laptop) simultaneously.</p>
+                    </div>
                 </div>
             </div>
         </section>
