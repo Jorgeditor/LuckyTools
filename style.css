@@ -92,7 +92,7 @@ main {
     justify-content: center;
     align-items: center;
     min-height: 70vh;
-    padding-bottom: 100px;
+    padding-bottom: 20px;
 }
 
 .hero-card {
@@ -489,7 +489,7 @@ footer p {
 
 /* Reviews Section */
 .reviews-section {
-    padding: 60px 0px 100px;
+    padding: 20px 0px 40px;
 }
 
 .reviews-header {
