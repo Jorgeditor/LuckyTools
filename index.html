@@ -84,8 +84,9 @@
                 <div class="hero-video-column load-pop-delay">
                     <div class="premium-video-wrapper">
                         <iframe 
+                            id="promoVideo"
                             src="https://www.youtube.com/embed/yya3gxMOpvk?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
-                            title="LuckyTools Promo"
+                            title="LuckyTools PROMO ONE"
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -595,6 +596,25 @@
     </footer>
 
     <script>
+        // Interleaved Video System (Alternates between Promo One and Promo Two on reload)
+        const promoVideo = document.getElementById('promoVideo');
+        if (promoVideo) {
+            const video1 = 'yya3gxMOpvk';
+            const video2 = '_DGZ-4PUPek';
+            const lastPromo = localStorage.getItem('luckyTools_promo');
+            
+            // If last was promo-one, show promo-two, otherwise show promo-one
+            const showPromoTwo = (lastPromo === 'promo-one');
+            const currentVideoId = showPromoTwo ? video2 : video1;
+            const currentPromoName = showPromoTwo ? 'promo-two' : 'promo-one';
+            
+            promoVideo.src = `https://www.youtube.com/embed/${currentVideoId}?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080`;
+            promoVideo.title = showPromoTwo ? 'LuckyTools PROMO TWO' : 'LuckyTools PROMO ONE';
+            
+            // Save state for next reload
+            localStorage.setItem('luckyTools_promo', currentPromoName);
+        }
+
         // Smooth Scroll Reveal Animation
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
