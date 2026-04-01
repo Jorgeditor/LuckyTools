@@ -248,12 +248,30 @@ h1 span {
     background-size: 300% auto;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: premium-orange-rgb 4s linear infinite;
+    color: transparent;
+    animation: gradientFlow 5s linear infinite;
     display: inline-block;
 }
 
-@keyframes premium-orange-rgb {
+/* Word Rotation Animation */
+.word-rotate {
+    display: inline-block;
+    position: relative;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.word-rotate.exit {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+.word-rotate.enter {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: none;
+}
+
+@keyframes gradientFlow {
     0% { background-position: 0% center; }
     100% { background-position: 300% center; }
 }

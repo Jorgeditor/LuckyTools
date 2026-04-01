@@ -58,7 +58,7 @@
                         <div class="hero-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h1>LuckyTools for <br> <span>Creative Editors</span></h1>
+                        <h1>LuckyTools for <br> <span>Creative <span id="rotatingWord" class="word-rotate">Editors</span></span></h1>
                         <p>LuckyTools is a premium suite of plugins for Adobe Premiere Pro designed to automate tedious tasks, streamline your workflow, and let you focus on what really matters: your creativity. Everything is a shortcut away ⚡</p>
                         <div class="hero-actions">
                             <div class="main-actions">
@@ -633,6 +633,32 @@
             const revealElements = document.querySelectorAll('.reveal');
             revealElements.forEach(el => observer.observe(el));
         });
+
+        // Headline Word Rotation Logic
+        const rotatingWord = document.getElementById('rotatingWord');
+        if (rotatingWord) {
+            const words = ['Editors', 'Producers', 'Creators', 'Designers'];
+            let currentIndex = 0;
+
+            setInterval(() => {
+                // Start Exit Animation
+                rotatingWord.classList.add('exit');
+
+                setTimeout(() => {
+                    // Change Word and Move to Bottom Position (hidden)
+                    currentIndex = (currentIndex + 1) % words.length;
+                    rotatingWord.textContent = words[currentIndex];
+                    rotatingWord.classList.remove('exit');
+                    rotatingWord.classList.add('enter');
+
+                    // Force Reflow
+                    void rotatingWord.offsetWidth;
+
+                    // Start Enter Animation
+                    rotatingWord.classList.remove('enter');
+                }, 400); // Matches CSS transition duration
+            }, 3000); // Rotation interval
+        }
 
         // Click-to-copy for discount code
         const discountBox = document.getElementById('discountBox');
