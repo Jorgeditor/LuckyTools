@@ -1392,3 +1392,49 @@ footer p {
 }
 
 /* --- End of Custom Video Styles --- */
+
+/* Boosting scale for 2K+ Monitors */
+@media (min-width: 2000px) {
+    .hero.container {
+        max-width: 2000px;
+    }
+    
+    .hero-card-column {
+        flex: 0 0 550px;
+    }
+    
+    .hero-card {
+        padding: 60px;
+    }
+    
+    h1 {
+        font-size: 64px;
+    }
+    
+    .hero-card p {
+        font-size: 18px;
+        max-width: 700px;
+    }
+    
+    .hero-content-wrapper {
+        gap: 60px;
+    }
+    
+    .price-current {
+        font-size: 48px;
+    }
+
+    .btn-download {
+        padding: 24px 48px;
+        font-size: 18px;
+    }
+
+    .discount-code {
+        font-size: 18px;
+        padding: 16px 32px;
+    }
+
+    .code-highlight {
+        font-size: 22px;
+    }
+}
