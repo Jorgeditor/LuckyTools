@@ -1218,7 +1218,7 @@ footer p {
 
 /* FAQ Section */
 .faq-section {
-    max-width: 900px;
+    max-width: 750px; /* Reduced to make them thinner */
     margin: 0 auto;
 }
 
@@ -1251,7 +1251,7 @@ footer p {
 }
 
 .faq-question {
-    padding: 24px;
+    padding: 18px 24px; /* Reduced vertical padding */
     font-size: 16px;
     font-weight: 500;
     color: #e0e0e0;
