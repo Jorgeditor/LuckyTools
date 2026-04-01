@@ -653,14 +653,15 @@ footer p {
 /* Features Dual Layout (3+1 Grid) */
 .features-dual-layout {
     display: grid;
-    grid-template-columns: repeat(3, 0.55fr) 4fr; /* Shifting cards left, enlarging video share */
-    grid-auto-rows: 1fr; /* Maintain perfect row symmetry */
+    grid-template-columns: repeat(3, 0.45fr) 4.5fr; /* Shifted left, massive video space */
+    grid-auto-rows: 1fr; /* Perfect row symmetry */
     gap: 30px; 
     margin-bottom: 60px;
     align-items: center; 
-    max-width: 1550px; /* Increased for better expansion while remaining centered */
-    padding: 0 40px;
-    margin: 0 auto; 
+    width: 95%; /* Use almost full width */
+    max-width: 1750px; /* High cap to prevent "huge" feel on super-ultrawide */
+    padding: 0;
+    margin: 0 0 0 2.5%; /* Strictly left-aligned with a small safety margin */
 }
 
 .features-right-col {
