@@ -1333,9 +1333,9 @@ footer p {
 
 .premium-video-wrapper iframe {
     width: 100%;
-    height: 100%;
+    height: 110%; /* Taller than container to allow vertical-only cropping */
     border: none;
-    transform: scale(1.15) translateY(3%); /* Zoom in to crop title/uploader info */
+    transform: translateY(-5%); /* Push the top bar out of view */
     pointer-events: auto;
 }
 
