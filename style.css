@@ -653,11 +653,12 @@ footer p {
 /* Features Dual Layout (3+1 Grid) */
 .features-dual-layout {
     display: grid;
-    grid-template-columns: repeat(3, 0.8fr) 5.5fr; /* Video is now much larger */
-    gap: 16px; /* Tighter gap */
+    grid-template-columns: repeat(3, 1fr) 6fr; /* Expanded video share */
+    gap: 30px; /* More breathing room */
     margin-bottom: 40px;
-    align-items: center; /* Center to match rows better */
-    max-width: 1450px;
+    align-items: center;
+    max-width: 1700px;
+    padding: 0 40px;
     margin-left: auto;
     margin-right: auto;
 }
