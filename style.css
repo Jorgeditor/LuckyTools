@@ -1417,11 +1417,21 @@ footer p {
     font-size: 26px;
     box-shadow: 0 10px 40px rgba(255, 159, 28, 0.6);
     animation: pulsateHint 2s infinite;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto; /* Ensure it's clickable */
+}
+
+.swap-hint:hover {
+    background: #fff;
+    transform: scale(1.15) translateX(5px);
+    box-shadow: 0 15px 50px rgba(255, 255, 255, 0.5);
+    color: var(--accent-color);
 }
 
 @keyframes pulsateHint {
     0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
+    50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 
