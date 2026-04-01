@@ -598,7 +598,8 @@
         // Smooth Scroll Reveal Animation
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
-                threshold: 0.15
+                threshold: 0.2, // Need to see 20% of the element
+                rootMargin: '0px 0px -150px 0px' // Wait until the element is 150px into the viewport
             };
 
             const observer = new IntersectionObserver((entries) => {

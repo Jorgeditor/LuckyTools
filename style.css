@@ -1121,10 +1121,10 @@ footer p {
     will-change: transform, opacity;
 }
 
-.reveal-up { transform: translateY(40px); }
-.reveal-left { transform: translateX(-50px); }
-.reveal-right { transform: translateX(50px); }
-.reveal-zoom { transform: scale(0.9); }
+.reveal-up { transform: translateY(60px); }
+.reveal-left { transform: translateX(-80px); }
+.reveal-right { transform: translateX(80px); }
+.reveal-zoom { transform: scale(0.95); }
 
 .reveal.active {
     opacity: 1;
