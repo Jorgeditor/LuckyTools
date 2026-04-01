@@ -122,7 +122,7 @@ body::before {
 }
 
 .hero.container {
-    max-width: 1900px; /* Expanded to accommodate true 16:9 match height */
+    max-width: 1520px; /* Reduced by 20% from 1900px */
 }
 
 header {
@@ -177,17 +177,17 @@ main {
 
 .hero-content-wrapper {
     display: flex;
-    align-items: stretch; /* Match height of card and video */
-    gap: 40px;
+    align-items: stretch;
+    gap: 32px; /* Reduced from 40px */
     width: 100%;
 }
 
 .hero-card-column {
-    flex: 0 0 550px; /* Fixed width for card to allow video to grow */
+    flex: 0 0 440px; /* Reduced by 20% from 550px */
 }
 
 .hero-video-column {
-    flex: 1 0 auto; /* Allow column to grow based on video ratio */
+    flex: 1 0 auto;
     display: flex;
     align-items: center;
 }
@@ -196,9 +196,9 @@ main {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     backdrop-filter: blur(10px);
-    padding: 60px;
+    padding: 48px; /* Reduced by 20% from 60px */
     border-radius: 24px;
-    height: 100%; /* Fill column height */
+    height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -235,7 +235,7 @@ main {
 
 h1 {
     font-family: 'Outfit', sans-serif;
-    font-size: 56px;
+    font-size: 45px; /* Reduced from 56px */
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.1;
@@ -258,7 +258,7 @@ h1 span {
 
 .hero-card p {
     color: var(--text-muted);
-    font-size: 18px;
+    font-size: 14px; /* Reduced from 18px */
     margin-bottom: 40px;
     max-width: 600px;
 }
@@ -1317,8 +1317,9 @@ footer p {
 }
 /* --- Video Column Styling --- */
 .premium-video-wrapper {
-    height: 100%; /* Height matches card precisely */
-    aspect-ratio: 16 / 9; /* Strictly 16:9 */
+    height: 100%;
+    min-height: 360px; /* Reduced from 450px */
+    aspect-ratio: 16 / 9;
     background: #000;
     border-radius: 20px;
     overflow: hidden;
