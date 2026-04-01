@@ -776,6 +776,13 @@ footer p {
     font-size: 12px; /* Smaller font */
 }
 
+.dual-column-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 6px;
+}
+
 .feature-card ul li {
     margin-bottom: 6px; /* Tighter spacing */
     display: flex;
