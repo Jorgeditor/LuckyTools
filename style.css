@@ -1474,6 +1474,7 @@ footer p {
     padding-bottom: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin-bottom: 40px;
+    text-align: center; /* Center text across all footer columns */
 }
 
 .footer-logo {
@@ -1485,6 +1486,7 @@ footer p {
     margin-bottom: 24px;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center the logo brand */
     gap: 12px;
 }
 
@@ -1493,12 +1495,13 @@ footer p {
     font-size: 16px;
     line-height: 1.7;
     max-width: 360px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto; /* Center the brand paragraph */
 }
 
 .social-links {
     display: flex;
     gap: 20px;
+    justify-content: center; /* Center social icons */
 }
 
 .social-links a {
@@ -1534,16 +1537,7 @@ footer p {
     position: relative;
 }
 
-.footer-nav h4::after, 
-.footer-support h4::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: var(--accent-color);
-}
+/* Removed the weird lines from footer headers */
 
 .footer-nav ul, 
 .footer-support ul {
