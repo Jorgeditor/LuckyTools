@@ -653,13 +653,14 @@ footer p {
 /* Features Dual Layout (3+1 Grid) */
 .features-dual-layout {
     display: grid;
-    grid-template-columns: repeat(3, 0.7fr) 2.5fr; /* Scaled down balance */
+    grid-template-columns: repeat(3, 0.55fr) 4fr; /* Shifting cards left, enlarging video share */
+    grid-auto-rows: 1fr; /* Maintain perfect row symmetry */
     gap: 30px; 
     margin-bottom: 60px;
     align-items: center; 
-    max-width: 1350px; /* Reduced from full-width to a large-but-safe width */
+    max-width: 1550px; /* Increased for better expansion while remaining centered */
     padding: 0 40px;
-    margin: 0 auto; /* Return to centering for a balanced look */
+    margin: 0 auto; 
 }
 
 .features-right-col {
