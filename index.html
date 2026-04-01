@@ -7,12 +7,14 @@
     <title>LuckyTools | Premium Premiere Pro Plugins</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
     <div class="video-bg-container">
         <iframe 
-            src="https://www.youtube.com/embed/zbo6jUGrwdk?autoplay=1&mute=1&loop=1&playlist=zbo6jUGrwdk&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&playsinline=1&vq=hd1080" 
+            id="bg-video-player"
+            src="https://www.youtube.com/embed/zbo6jUGrwdk?autoplay=1&mute=1&loop=1&playlist=zbo6jUGrwdk&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&playsinline=1&vq=hd1080&enablejsapi=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -84,12 +86,21 @@
                 <div class="hero-video-column load-pop-delay">
                     <div class="premium-video-wrapper">
                         <iframe 
-                            src="https://www.youtube.com/embed/yya3gxMOpvk?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
+                            id="hero-video-player"
+                            src="https://www.youtube.com/embed/yya3gxMOpvk?enablejsapi=1&controls=0&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
                             title="LuckyTools Promo"
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
+                        <div class="custom-video-controls">
+                            <button id="mute-toggle" title="Mute/Unmute">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <button id="play-pause-toggle" title="Play/Pause">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -558,5 +569,6 @@
             });
         }
     </script>
+    <script src="video-controls.js"></script>
 </body>
 </html>
