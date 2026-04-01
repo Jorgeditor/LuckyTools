@@ -654,10 +654,9 @@ footer p {
 .features-dual-layout {
     display: grid;
     grid-template-columns: repeat(3, 1fr) 2.5fr; /* Rebalanced to widen cards */
-    grid-auto-rows: 1fr; /* Force all rows to be equal height */
     gap: 30px; 
     margin-bottom: 40px;
-    align-items: stretch; /* Stretch cards to fill row height */
+    align-items: stretch; /* Stretch cards to fill their specific row height */
     max-width: 1700px;
     padding: 0 40px;
     margin-left: auto;
