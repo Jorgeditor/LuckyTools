@@ -82,15 +82,32 @@
                 </div>
 
                 <div class="hero-video-column load-pop-delay">
-                    <div class="premium-video-wrapper">
-                        <iframe 
-                            id="promoVideo"
-                            src="https://www.youtube.com/embed/yya3gxMOpvk?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
-                            title="LuckyTools PROMO ONE"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                    <div class="video-stack">
+                        <div id="videoCardOne" class="premium-video-wrapper video-layer">
+                            <iframe 
+                                id="promoVideo1"
+                                src="https://www.youtube.com/embed/yya3gxMOpvk?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
+                                title="LuckyTools PROMO ONE"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div id="videoCardTwo" class="premium-video-wrapper video-layer" onclick="this.classList.contains('background') && swapVideos()">
+                            <iframe 
+                                id="promoVideo2"
+                                src="https://www.youtube.com/embed/_DGZ-4PUPek?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
+                                title="LuckyTools PROMO TWO"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                            <div class="video-swap-overlay">
+                                <div class="swap-hint">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -596,30 +613,46 @@
     </footer>
 
     <script>
-        // Interleaved Video System (Alternates between Promo One and Promo Two on reload)
-        const promoVideo = document.getElementById('promoVideo');
-        if (promoVideo) {
-            const video1 = 'yya3gxMOpvk';
-            const video2 = '_DGZ-4PUPek';
+        // Interactive Stacked Video System
+        const videoCardOne = document.getElementById('videoCardOne');
+        const videoCardTwo = document.getElementById('videoCardTwo');
+        
+        function updateVideoStack(activePromo) {
+            if (activePromo === 'promo-two') {
+                videoCardOne.classList.remove('active');
+                videoCardOne.classList.add('background');
+                videoCardTwo.classList.remove('background');
+                videoCardTwo.classList.add('active');
+            } else {
+                videoCardTwo.classList.remove('active');
+                videoCardTwo.classList.add('background');
+                videoCardOne.classList.remove('background');
+                videoCardOne.classList.add('active');
+            }
+        }
+
+        function swapVideos() {
+            const currentPromo = localStorage.getItem('luckyTools_promo');
+            const newPromo = (currentPromo === 'promo-one') ? 'promo-two' : 'promo-one';
+            localStorage.setItem('luckyTools_promo', newPromo);
+            updateVideoStack(newPromo);
+        }
+
+        // Initialize stack based on persistence (alternating on reload logic)
+        if (videoCardOne && videoCardTwo) {
             const lastPromo = localStorage.getItem('luckyTools_promo');
+            const showPromoTwo = (lastPromo === 'promo-one'); // Toggle on reload
+            const initialPromo = showPromoTwo ? 'promo-two' : 'promo-one';
             
-            // If last was promo-one, show promo-two, otherwise show promo-one
-            const showPromoTwo = (lastPromo === 'promo-one');
-            const currentVideoId = showPromoTwo ? video2 : video1;
-            const currentPromoName = showPromoTwo ? 'promo-two' : 'promo-one';
-            
-            promoVideo.src = `https://www.youtube.com/embed/${currentVideoId}?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080`;
-            promoVideo.title = showPromoTwo ? 'LuckyTools PROMO TWO' : 'LuckyTools PROMO ONE';
-            
-            // Save state for next reload
-            localStorage.setItem('luckyTools_promo', currentPromoName);
+            updateVideoStack(initialPromo);
+            localStorage.setItem('luckyTools_promo', initialPromo);
         }
 
         // Smooth Scroll Reveal Animation
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
-                threshold: 0.2, // Need to see 20% of the element
-                rootMargin: '0px 0px -150px 0px' // Wait until the element is 150px into the viewport
+                threshold: 0.2,
+                rootMargin: '0px 0px -150px 0px'
             };
 
             const observer = new IntersectionObserver((entries) => {
