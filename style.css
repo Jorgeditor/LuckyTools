@@ -63,7 +63,7 @@ body {
     height: 56.25vw; /* 16:9 Aspect Ratio */
     min-height: 100vh;
     min-width: 177.77vh; /* 16:9 Aspect Ratio */
-    transform: translate(-50%, -60%) scale(1.15); /* Start at -60% to match animation 0% */
+    transform: translate(-50%, -50%) scale(1.15); /* Restored to v31 values */
     pointer-events: none;
     opacity: 0;
     animation: youtube-slide-down 2.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
