@@ -63,24 +63,21 @@ body {
     height: 56.25vw; /* 16:9 Aspect Ratio */
     min-height: 100vh;
     min-width: 177.77vh; /* 16:9 Aspect Ratio */
-    transform: translate(-50%, -50%) scale(1.15); /* Restored to v31 values */
+    transform: translate(-50%, -50%) scale(1.15);
     pointer-events: none;
     opacity: 0;
-    animation: youtube-slide-down 6s cubic-bezier(0.05, 1, 0.2, 1) forwards;
-    animation-delay: 0.5s;
+    animation: youtube-slide-down 2.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    animation-delay: 0.3s;
 }
 
 @keyframes youtube-slide-down {
     0% {
         opacity: 0;
-        transform: translate(-50%, -85%) scale(1.15); /* Starts much higher up */
-    }
-    30% {
-        opacity: 0.6;
+        transform: translate(-50%, -60%) scale(1.15);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1.15); /* Final resting position */
+        transform: translate(-50%, -50%) scale(1.15);
     }
 }
 
@@ -2494,10 +2491,7 @@ body.nav-open {
 
     .video-bg-container iframe {
         pointer-events: none !important;
-        /* NOTE: Do NOT add transform: !important here — it would override the
-           youtube-slide-down keyframe animation and kill the slide-in effect.
-           The animation handles the transform natively. */
-        will-change: transform, opacity; /* GPU layer for smooth animation */
+        transform: translate(-50%, -50%) scale(1) !important; /* Simpler scale for mobile */
     }
 
     /* Nitro: Force container into its own layer */
@@ -2550,9 +2544,19 @@ body.nav-open {
         will-change: transform;
     }
 
-    /* 5. Entrance Animations restored on mobile */
-
-    /* Nitro: Ensure smooth, non-blocking scroll interaction */
+    /* 5. Disable Entrance Animations to prevent main thread blocking (opacity: 0 hang) */
+    .video-bg-container iframe {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: translate(-50%, -50%) scale(1.15) !important;
+    }
+    
+    .load-pop,
+    .load-pop-delay {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 
     /* Nitro: Ensure smooth, non-blocking scroll interaction */
     html, body {
