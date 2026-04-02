@@ -2544,19 +2544,9 @@ body.nav-open {
         will-change: transform;
     }
 
-    /* 5. Disable Entrance Animations to prevent main thread blocking (opacity: 0 hang) */
-    .video-bg-container iframe {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: translate(-50%, -50%) scale(1.15) !important;
-    }
-    
-    .load-pop,
-    .load-pop-delay {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
+    /* 5. Entrance Animations restored on mobile */
+
+    /* Nitro: Ensure smooth, non-blocking scroll interaction */
 
     /* Nitro: Ensure smooth, non-blocking scroll interaction */
     html, body {
