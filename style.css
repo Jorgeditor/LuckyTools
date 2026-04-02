@@ -653,7 +653,7 @@ footer p {
 /* Features Dual Layout (3+1 Grid) */
 .features-dual-layout {
     display: grid;
-    grid-template-columns: repeat(3, 0.45fr) 4.5fr; /* Shifted left, massive video space */
+    grid-template-columns: repeat(3, 0.75fr) 3.8fr; /* Balanced grid space so 2k font has room without severe wrapping */
     grid-auto-rows: 1fr; /* Perfect row symmetry */
     gap: clamp(10px, 1.17vw, 30px); 
     margin-bottom: 60px; /* Perfectly balanced separation */
@@ -753,8 +753,8 @@ footer p {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: clamp(8px, 0.7vw, 18px); 
-    border-radius: clamp(8px, 0.62vw, 16px);
+    padding: clamp(14px, 1vw, 24px); 
+    border-radius: clamp(12px, 0.8vw, 20px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
     will-change: transform, box-shadow;
     display: flex;
@@ -801,28 +801,28 @@ footer p {
 .feature-card h4 {
     font-family: 'Outfit', sans-serif;
     color: var(--accent-color);
-    font-size: clamp(9px, 0.58vw, 15px); /* Dynamic scaling */
-    margin-bottom: clamp(4px, 0.39vw, 10px);
+    font-size: clamp(14px, 0.8vw, 19px); /* Increased significantly for 2k legible text under 0.84 zoom */
+    margin-bottom: clamp(6px, 0.5vw, 12px);
 }
 
 .feature-card ul {
     list-style: none;
     color: var(--text-color);
-    font-size: clamp(7px, 0.46vw, 12px); /* Dynamic scaling */
+    font-size: clamp(11.5px, 0.7vw, 15.5px); /* Increased significantly for 2k legible text */
 }
 
 .dual-column-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: clamp(10px, 1.17vw, 30px);
-    row-gap: clamp(2px, 0.23vw, 6px);
+    column-gap: clamp(15px, 1.3vw, 34px);
+    row-gap: clamp(4px, 0.3vw, 8px);
 }
 
 .feature-card ul li {
-    margin-bottom: clamp(2px, 0.23vw, 6px); /* Tighter spacing */
+    margin-bottom: clamp(4px, 0.3vw, 8px);
     display: flex;
     align-items: flex-start;
-    gap: clamp(3px, 0.31vw, 8px);
+    gap: clamp(6px, 0.4vw, 10px);
 }
 
 .feature-card ul li i {
