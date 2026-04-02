@@ -2233,6 +2233,14 @@ body.nav-open {
         flex-direction: column;
         justify-content: flex-start;
         min-height: 140px;
+        transition: none !important; /* Disable any transition to make it feel static */
+    }
+
+    /* Nitro: Disable selection/hover animation strictly on mobile */
+    .feature-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+        border-color: var(--card-border) !important;
     }
 
     .feature-card h4 {
@@ -2261,6 +2269,15 @@ body.nav-open {
 
     .dual-column-list {
         grid-template-columns: 1fr !important;
+    }
+
+    /* Nitro: Disable scaling animation for local videos on mobile */
+    .feature-row:hover .feature-image {
+        transform: none !important;
+    }
+    
+    .feature-image {
+        transition: none !important; /* Make it static for mobile */
     }
 
     /* === FEATURE ROWS (Panels) === */
