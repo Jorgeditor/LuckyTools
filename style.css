@@ -2441,6 +2441,31 @@ body.nav-open {
     .faq-item {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
+        background-color: #0c0c0e !important;
+        will-change: transform, opacity; /* Nitro layer promotion */
+    }
+
+    /* Nitro: Disable pointer events on the fixed background video on mobile only.
+       This prevents the input thread from checking clicks/hovers while scrolling. */
+    .video-bg-container {
+        pointer-events: none !important;
+        filter: none !important; /* Strip expensive blur/brightness on mobile */
+        -webkit-filter: none !important;
+    }
+
+    .video-bg-container iframe {
+        pointer-events: none !important;
+        transform: translate(-50%, -50%) scale(1) !important; /* Simpler scale for mobile */
+    }
+
+    /* Nitro: Force container into its own layer */
+    main {
+        contain: paint;
+        will-change: scroll-position;
+    }
+    .faq-item {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
         background-color: #0c0c0e !important; /* Solid matte fallback to prevent transparency lag */
     }
 
@@ -2495,5 +2520,19 @@ body.nav-open {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
+    }
+
+    /* Nitro: Ensure smooth, non-blocking scroll interaction */
+    html, body {
+        scroll-behavior: auto !important; /* Native scroll is smoother than software behavior on some Androids */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Nitro: Disable all transitions and pointer events while scrolling 
+       to guarantee 60FPS on mid-range Androids. */
+    body.is-scrolling * {
+        pointer-events: none !important;
+        transition: none !important;
+        animation-play-state: paused !important;
     }
 }

@@ -837,6 +837,21 @@
             });
         })();
 
+        // --- NITRO MOBILE SCROLL OPTIMIZATION ---
+        (function() {
+            if (window.innerWidth > 768) return;
+            
+            // Add a class that disables all transitions while scrolling to ensure 60fps
+            let scrollTimer;
+            window.addEventListener('scroll', function() {
+                document.body.classList.add('is-scrolling');
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(() => {
+                    document.body.classList.remove('is-scrolling');
+                }, 150);
+            }, { passive: true });
+        })();
+
         // --- HAMBURGER MENU ---
         (function() {
             const hamburgerBtn = document.getElementById('hamburgerBtn');
