@@ -818,6 +818,25 @@
             });
         })();
 
+        // --- LOCAL VIDEO CPU OPTIMIZATION (Pause off-screen videos) ---
+        (function() {
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        video.play().catch(e => console.log('Autoplay prevented', e));
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Apply to all local videos
+            document.querySelectorAll('video').forEach(video => {
+                videoObserver.observe(video);
+            });
+        })();
+
         // --- HAMBURGER MENU ---
         (function() {
             const hamburgerBtn = document.getElementById('hamburgerBtn');
