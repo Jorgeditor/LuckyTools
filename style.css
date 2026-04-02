@@ -655,7 +655,7 @@ footer p {
     display: grid;
     grid-template-columns: repeat(3, 0.45fr) 4.5fr; /* Shifted left, massive video space */
     grid-auto-rows: 1fr; /* Perfect row symmetry */
-    gap: clamp(15px, 1.5vw, 30px); 
+    gap: clamp(10px, 1.17vw, 30px); 
     margin-bottom: 60px; /* Perfectly balanced separation */
     align-items: center; 
     width: clamp(300px, 72vw, 1750px); /* Fluid window scaling to prevent asphyxiation on 1080p */
@@ -663,12 +663,37 @@ footer p {
     margin: 0 auto 60px; /* Centered with perfectly balanced bottom margin */
 }
 
-/* 1080p Optimization (Scales down for roughly 1920px and below) */
+/* 1080p Optimization - Shrink cards globally to allow them to match video height without text-wrap bloat */
+@media (max-width: 1950px) {
+    .features-dual-layout {
+        width: 85vw; /* Slightly wider layout so cards breathe horizontally */
+        grid-template-columns: repeat(3, 0.8fr) 3.8fr; /* Granting slightly more fractional width to cards */
+        gap: 15px;
+    }
+    .feature-card {
+        padding: 12px 14px !important;
+    }
+    .feature-card h4 {
+        font-size: 10.5px !important;
+        margin-bottom: 6px !important;
+    }
+    .feature-card ul {
+        font-size: 8.5px !important;
+    }
+    .feature-card ul li {
+        margin-bottom: 4px !important;
+        gap: 6px !important;
+    }
+    .dual-column-list {
+        column-gap: 10px !important;
+    }
+}
+
 @media (max-width: 1600px) {
     .features-dual-layout {
-        max-width: 1150px; /* Further reduced to feel more spacious on 1080p */
-        grid-template-columns: repeat(3, 1fr) 3.5fr; /* Slightly less dominant video for better balance */
-        gap: 25px;
+        width: 92vw; 
+        grid-template-columns: repeat(3, 1fr) 3.5fr; 
+        gap: 15px;
         padding: 0 20px;
     }
 }
@@ -727,8 +752,8 @@ footer p {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: clamp(12px, 1.1vw, 18px); 
-    border-radius: clamp(12px, 0.9vw, 16px);
+    padding: clamp(8px, 0.7vw, 18px); 
+    border-radius: clamp(8px, 0.62vw, 16px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
     will-change: transform, box-shadow;
     display: flex;
@@ -775,28 +800,28 @@ footer p {
 .feature-card h4 {
     font-family: 'Outfit', sans-serif;
     color: var(--accent-color);
-    font-size: clamp(12px, 0.85vw, 15px); /* Dynamic scaling */
-    margin-bottom: clamp(6px, 0.6vw, 10px);
+    font-size: clamp(9px, 0.58vw, 15px); /* Dynamic scaling */
+    margin-bottom: clamp(4px, 0.39vw, 10px);
 }
 
 .feature-card ul {
     list-style: none;
     color: var(--text-color);
-    font-size: clamp(9.5px, 0.72vw, 12px); /* Dynamic scaling */
+    font-size: clamp(7px, 0.46vw, 12px); /* Dynamic scaling */
 }
 
 .dual-column-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: clamp(15px, 1.8vw, 30px);
-    row-gap: 6px;
+    column-gap: clamp(10px, 1.17vw, 30px);
+    row-gap: clamp(2px, 0.23vw, 6px);
 }
 
 .feature-card ul li {
-    margin-bottom: 6px; /* Tighter spacing */
+    margin-bottom: clamp(2px, 0.23vw, 6px); /* Tighter spacing */
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: clamp(3px, 0.31vw, 8px);
 }
 
 .feature-card ul li i {
