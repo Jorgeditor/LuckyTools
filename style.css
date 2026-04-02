@@ -2491,7 +2491,10 @@ body.nav-open {
 
     .video-bg-container iframe {
         pointer-events: none !important;
-        transform: translate(-50%, -50%) scale(1) !important; /* Simpler scale for mobile */
+        /* NOTE: Do NOT add transform: !important here — it would override the
+           youtube-slide-down keyframe animation and kill the slide-in effect.
+           The animation handles the transform natively. */
+        will-change: transform, opacity; /* GPU layer for smooth animation */
     }
 
     /* Nitro: Force container into its own layer */
