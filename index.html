@@ -12,7 +12,7 @@
 <body>
     <div class="video-bg-container">
         <iframe 
-            src="https://www.youtube.com/embed/zbo6jUGrwdk?autoplay=1&mute=1&loop=1&playlist=zbo6jUGrwdk&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&playsinline=1&vq=hd1080" 
+            data-yt-src="https://www.youtube.com/embed/zbo6jUGrwdk?autoplay=1&mute=1&loop=1&playlist=zbo6jUGrwdk&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&playsinline=1&vq=hd1080" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -101,7 +101,7 @@
                         <div id="videoCardOne" class="premium-video-wrapper video-layer" onclick="this.classList.contains('background') && swapVideos()">
                             <iframe 
                                 id="promoVideo1"
-                                src="https://www.youtube.com/embed/yya3gxMOpvk?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
+                                data-yt-src="https://www.youtube.com/embed/yya3gxMOpvk?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
                                 title="LuckyTools PROMO ONE"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -117,7 +117,7 @@
                             <iframe 
                                 id="promoVideo2"
                                 loading="lazy"
-                                src="https://www.youtube.com/embed/_DGZ-4PUPek?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
+                                data-yt-src="https://www.youtube.com/embed/_DGZ-4PUPek?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080" 
                                 title="LuckyTools PROMO TWO"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -388,7 +388,7 @@
                         <iframe 
                             id="powerVideoRef"
                             loading="lazy"
-                            src="https://www.youtube.com/embed/XWkc1OH7DwE?vq=hd1080&modestbranding=1&rel=0" 
+                            data-yt-src="https://www.youtube.com/embed/XWkc1OH7DwE?vq=hd1080&modestbranding=1&rel=0" 
                             title="The Power of LuckyTools"
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -804,6 +804,19 @@
             attributes: true,
             attributeFilter: ['class', 'lang', '_mstlang'] 
         });
+
+        // --- YOUTUBE MOBILE RESOLUTION DETECTOR ---
+        (function() {
+            const isMobile = window.innerWidth <= 768;
+            const ytIframes = document.querySelectorAll('iframe[data-yt-src]');
+            ytIframes.forEach(iframe => {
+                let url = iframe.getAttribute('data-yt-src');
+                if (isMobile) {
+                    url = url.replace('vq=hd1080', 'vq=480p');
+                }
+                iframe.src = url;
+            });
+        })();
 
         // --- HAMBURGER MENU ---
         (function() {
