@@ -700,6 +700,46 @@ footer p {
     }
 }
 
+/* --- TRANSLATION LAYOUT FIXES (DYNAMO-SCALE) --- */
+/* These rules trigger when the browser translates the page, preventing English-optimized layouts from breaking */
+html[lang]:not([lang="en"]) .features-dual-layout,
+html.translated-ltr .features-dual-layout, 
+html.translated-rtl .features-dual-layout,
+html[_mstlang] .features-dual-layout {
+    grid-template-columns: repeat(3, 0.9fr) 3.1fr !important; /* Give more width to text-heavy translated cards */
+    gap: 12px !important;
+}
+
+html[lang]:not([lang="en"]) .feature-card,
+html.translated-ltr .feature-card,
+html.translated-rtl .feature-card,
+html[_mstlang] .feature-card {
+    padding: 14px 15px !important; /* Slightly tighter padding for long words */
+}
+
+html[lang]:not([lang="en"]) .feature-card h4,
+html.translated-ltr .feature-card h4,
+html.translated-rtl .feature-card h4,
+html[_mstlang] .feature-card h4 {
+    font-size: 15px !important; /* Compact titles for translation */
+    letter-spacing: 0.5px !important;
+}
+
+html[lang]:not([lang="en"]) .feature-card ul,
+html.translated-ltr .feature-card ul,
+html.translated-rtl .feature-card ul,
+html[_mstlang] .feature-card ul {
+    font-size: 11px !important; /* Micro-font for translated lists */
+    line-height: 1.2 !important;
+}
+
+html[lang]:not([lang="en"]) .feature-card ul li,
+html.translated-ltr .feature-card ul li,
+html.translated-rtl .feature-card ul li,
+html[_mstlang] .feature-card ul li {
+    margin-bottom: 4px !important;
+}
+
 .features-right-col {
     grid-column: 4;
     grid-row: 1 / span 2;
