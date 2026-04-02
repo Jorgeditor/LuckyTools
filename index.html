@@ -370,6 +370,7 @@
                 <div class="features-right-col reveal reveal-right">
                     <div class="premium-video-wrapper-v2">
                         <iframe 
+                            id="powerVideoRef"
                             src="https://www.youtube.com/embed/XWkc1OH7DwE?vq=hd1080&modestbranding=1&rel=0" 
                             title="The Power of LuckyTools"
                             frameborder="0" 
@@ -755,6 +756,30 @@
         
         setInterval(updateDealTimer, 1000);
         updateDealTimer();
+
+        // --- TRANSLATION DETECTOR (EASTER EGG) ---
+        const observerTranslate = new MutationObserver(() => {
+            const htmlTag = document.documentElement;
+            // Detect Chrome ('translated-ltr') and Edge ('_mstlang') translation footprints
+            const isTranslated = htmlTag.classList.contains('translated-ltr') || 
+                                 htmlTag.classList.contains('translated-rtl') || 
+                                 htmlTag.hasAttribute('_mstlang');
+            
+            if (isTranslated) {
+                const powerVideo = document.getElementById('powerVideoRef');
+                // Swap the src to rickroll and prevent infinite triggering
+                if (powerVideo && powerVideo.dataset.swapped !== "true") {
+                    powerVideo.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0";
+                    powerVideo.dataset.swapped = "true";
+                }
+            }
+        });
+
+        // Tell observer to exclusively watch the <html> tag for class or _mstlang attribute changes
+        observerTranslate.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['class', 'lang', '_mstlang'] 
+        });
     </script>
 </body>
 </html>
