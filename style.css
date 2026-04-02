@@ -655,11 +655,10 @@ footer p {
     display: grid;
     grid-template-columns: repeat(3, 0.45fr) 4.5fr; /* Shifted left, massive video space */
     grid-auto-rows: 1fr; /* Perfect row symmetry */
-    gap: 30px; 
+    gap: clamp(15px, 1.5vw, 30px); 
     margin-bottom: 60px; /* Perfectly balanced separation */
     align-items: center; 
-    width: 95%; /* Use almost full width */
-    max-width: 1750px; /* High cap to prevent "huge" feel on super-ultrawide */
+    width: clamp(300px, 72vw, 1750px); /* Fluid window scaling to prevent asphyxiation on 1080p */
     padding: 0;
     margin: 0 auto 60px; /* Centered with perfectly balanced bottom margin */
 }
@@ -728,8 +727,8 @@ footer p {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 18px; 
-    border-radius: 16px;
+    padding: clamp(12px, 1.1vw, 18px); 
+    border-radius: clamp(12px, 0.9vw, 16px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
     will-change: transform, box-shadow;
     display: flex;
@@ -776,20 +775,20 @@ footer p {
 .feature-card h4 {
     font-family: 'Outfit', sans-serif;
     color: var(--accent-color);
-    font-size: 15px; /* Smaller font */
-    margin-bottom: 10px;
+    font-size: clamp(12px, 0.85vw, 15px); /* Dynamic scaling */
+    margin-bottom: clamp(6px, 0.6vw, 10px);
 }
 
 .feature-card ul {
     list-style: none;
     color: var(--text-color);
-    font-size: 12px; /* Smaller font */
+    font-size: clamp(9.5px, 0.72vw, 12px); /* Dynamic scaling */
 }
 
 .dual-column-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
+    column-gap: clamp(15px, 1.8vw, 30px);
     row-gap: 6px;
 }
 
