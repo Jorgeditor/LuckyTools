@@ -664,6 +664,15 @@ footer p {
     margin: 0 auto 60px; /* Centered with perfectly balanced bottom margin */
 }
 
+/* 1080p Optimization (Scales down for roughly 1920px and below) */
+@media (max-width: 1600px) {
+    .features-dual-layout {
+        max-width: 1300px;
+        grid-template-columns: repeat(3, 1fr) 4fr; /* Slightly wider cards for smaller screens */
+        gap: 20px;
+    }
+}
+
 .features-right-col {
     grid-column: 4;
     grid-row: 1 / span 2;
