@@ -2049,6 +2049,24 @@ body.nav-open {
     /* === MAIN === */
     main { padding-top: 30px; }
 
+    /* === FIX: Reveal animations disabled on mobile ===
+       Prevents invisible (opacity:0) elements from creating dead blank space
+       when scrolling back up. Animations are a desktop-only luxury. */
+    .reveal-up,
+    .reveal-left,
+    .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* === FIX: FAQ margin-top override ===
+       The inline style="margin-top: -20px" on .faq-section overlaps the video on mobile.
+       Push it clearly below the video with positive margin. */
+    .faq-section {
+        margin-top: 36px !important;
+    }
+
     /* === HERO === */
     .hero {
         min-height: auto;
