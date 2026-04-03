@@ -1503,7 +1503,7 @@ html[_mstlang] .feature-card ul li {
 }
 
 .faq-item.open .faq-answer {
-    max-height: 200px;
+    max-height: 800px;
 }
 
 /* Hero Pop Animation */
@@ -1565,7 +1565,7 @@ html[_mstlang] .feature-card ul li {
 .video-layer.background {
     z-index: 5;
     opacity: 0.3;
-    transform: translate(12%, 0) scale(0.9); /* Shift right and scale down */
+    transform: translate(12%, 0) scale(0.9);
     cursor: pointer;
     filter: brightness(0.7) blur(1px);
 }
@@ -1576,53 +1576,73 @@ html[_mstlang] .feature-card ul li {
     filter: brightness(0.9) blur(0px);
 }
 
-.video-swap-overlay {
+.global-swap-btn {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 40px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-    background: linear-gradient(to left, rgba(0,0,0,0.4), transparent);
-    z-index: 15;
-}
-
-.video-layer.background .video-swap-overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.swap-hint {
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
     background: var(--accent-color);
-    width: 65px;
-    height: 65px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
-    font-size: 26px;
-    box-shadow: 0 10px 40px rgba(255, 159, 28, 0.6);
-    animation: pulsateHint 2s infinite;
+    color: #111;
+    font-size: 24px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: auto; /* Ensure it's clickable */
+    z-index: 20;
+    box-shadow: 0 10px 30px rgba(255, 159, 28, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.swap-hint:hover {
+.global-swap-btn:hover {
     background: #fff;
-    transform: scale(1.15) translateX(5px);
-    box-shadow: 0 15px 50px rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.5);
     color: var(--accent-color);
 }
 
-@keyframes pulsateHint {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+.swap-popup-cool {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    animation: bouncePopupCool 2s infinite ease-in-out;
+}
+
+.swap-popup-cool::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+@keyframes bouncePopupCool {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+    .global-swap-btn {
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
 }
 
 .premium-video-wrapper iframe {

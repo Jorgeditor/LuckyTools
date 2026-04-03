@@ -113,12 +113,7 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                             </iframe>
-                            <div class="video-swap-overlay">
-                                <div class="swap-hint">
-                                    <div class="swap-popup">Next Video</div>
-                                    <i class="fas fa-chevron-right"></i>
-                                </div>
-                            </div>
+
                         </div>
                         <div id="videoCardTwo" class="premium-video-wrapper video-layer" onclick="this.classList.contains('background') && swapVideos()">
                             <iframe 
@@ -131,13 +126,14 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                             </iframe>
-                            <div class="video-swap-overlay">
-                                <div class="swap-hint">
-                                    <div class="swap-popup">Next Video</div>
-                                    <i class="fas fa-chevron-right"></i>
-                                </div>
-                            </div>
                         </div>
+                        
+                        <!-- Global Swap Button (Outside wrappers to maintain total opacity) -->
+                        <div class="global-swap-btn" onclick="swapVideos()">
+                            <div class="swap-popup-cool">Next Video</div>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+
                     </div>
                 </div>
             </div>
