@@ -819,8 +819,8 @@
                     }
                     targetVideo.dataset.originalSrc = targetVideo.src || targetVideo.getAttribute('data-yt-src');
                     
-                    if (ytPlayer2 && typeof ytPlayer2.loadVideoById === "function") {
-                        ytPlayer2.loadVideoById({'videoId': 'dQw4w9WgXcQ', 'startSeconds': currentTime});
+                    if (ytPlayer2 && typeof ytPlayer2.cueVideoById === "function") {
+                        ytPlayer2.cueVideoById({'videoId': 'dQw4w9WgXcQ', 'startSeconds': currentTime});
                     } else {
                         const startParam = currentTime > 0 ? `&start=${Math.floor(currentTime)}` : '';
                         targetVideo.src = `https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=1&mute=0&rel=0&enablejsapi=1${startParam}`;
@@ -834,8 +834,8 @@
                         try { currentTime = ytPlayer2.getCurrentTime(); } catch (e) {}
                     }
                     
-                    if (ytPlayer2 && typeof ytPlayer2.loadVideoById === "function") {
-                        ytPlayer2.loadVideoById({'videoId': 'Ib2-zb7CATo', 'startSeconds': currentTime});
+                    if (ytPlayer2 && typeof ytPlayer2.cueVideoById === "function") {
+                        ytPlayer2.cueVideoById({'videoId': 'Ib2-zb7CATo', 'startSeconds': currentTime});
                     } else {
                         let baseSrc = targetVideo.dataset.originalSrc || targetVideo.getAttribute('data-yt-src');
                         targetVideo.src = baseSrc;
