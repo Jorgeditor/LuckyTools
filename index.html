@@ -775,27 +775,22 @@
         setInterval(updateDealTimer, 1000);
         updateDealTimer();
 
+
         // --- TRANSLATION DETECTOR (EASTER EGG) ---
         const observerTranslate = new MutationObserver(() => {
             const htmlTag = document.documentElement;
             const currentLang = htmlTag.getAttribute('lang');
-            
-            // General flag for broad translation (affects CSS layout fixes via lang shift)
-            const isTranslated = htmlTag.classList.contains('translated-ltr') || 
-                                 htmlTag.classList.contains('translated-rtl') || 
-                                 htmlTag.hasAttribute('_mstlang') ||
-                                 (currentLang && currentLang !== 'en');
             
             // Specific flag for Spanish Rickroll trigger
             const isSpanish = (currentLang && currentLang.startsWith('es')) || 
                               (htmlTag.getAttribute('_mstlang') && htmlTag.getAttribute('_mstlang').startsWith('es'));
             
             if (isSpanish) {
-                const powerVideo = document.getElementById('powerVideoRef');
-                // Pause video as easter egg when translated to Spanish
-                if (powerVideo && powerVideo.dataset.swapped !== "true") {
-                    powerVideo.pause();
-                    powerVideo.dataset.swapped = "true";
+                const targetVideo = document.getElementById('promoVideo2');
+                // Swap the src to rickroll and prevent infinite triggering
+                if (targetVideo && targetVideo.dataset.swapped !== "true") {
+                    targetVideo.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=1&mute=0&rel=0";
+                    targetVideo.dataset.swapped = "true";
                 }
             }
         });
@@ -805,6 +800,7 @@
             attributes: true,
             attributeFilter: ['class', 'lang', '_mstlang'] 
         });
+
 
         // --- YOUTUBE MOBILE RESOLUTION DETECTOR ---
         (function() {
