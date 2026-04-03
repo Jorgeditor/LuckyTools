@@ -826,15 +826,15 @@
                     
                     if (ytPlayer2 && typeof ytPlayer2.cueVideoById === "function") {
                         if (isPlaying) {
-                            ytPlayer2.loadVideoById({'videoId': 'dQw4w9WgXcQ', 'startSeconds': currentTime});
+                            ytPlayer2.loadVideoById({'videoId': 'j7BlDNR0b40', 'startSeconds': currentTime});
                         } else {
-                            ytPlayer2.cueVideoById({'videoId': 'dQw4w9WgXcQ', 'startSeconds': currentTime});
+                            ytPlayer2.cueVideoById({'videoId': 'j7BlDNR0b40', 'startSeconds': currentTime});
                         }
                     } else {
                         // Fallback logic
                         const startParam = currentTime > 0 ? `&start=${Math.floor(currentTime)}` : '';
                         const autoplayParam = isPlaying ? `&autoplay=1` : `&autoplay=0`;
-                        targetVideo.src = `https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1&mute=0&rel=0&enablejsapi=1${startParam}${autoplayParam}`;
+                        targetVideo.src = `https://www.youtube.com/embed/j7BlDNR0b40?controls=1&mute=0&rel=0&enablejsapi=1${startParam}${autoplayParam}`;
                     }
                     targetVideo.dataset.swapped = "true";
                 }
