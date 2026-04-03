@@ -675,6 +675,7 @@
         // Interactive Stacked Video System
         const videoCardOne = document.getElementById('videoCardOne');
         const videoCardTwo = document.getElementById('videoCardTwo');
+        const swapPopupText = document.querySelector('.swap-popup-cool');
         
         function updateVideoStack(activePromo) {
             if (activePromo === 'promo-two') {
@@ -682,11 +683,13 @@
                 videoCardOne.classList.add('background');
                 videoCardTwo.classList.remove('background');
                 videoCardTwo.classList.add('active');
+                if (swapPopupText) swapPopupText.innerText = 'Watch Quick Promo';
             } else {
                 videoCardTwo.classList.remove('active');
                 videoCardTwo.classList.add('background');
                 videoCardOne.classList.remove('background');
                 videoCardOne.classList.add('active');
+                if (swapPopupText) swapPopupText.innerText = 'Watch Features Demo';
             }
         }
 
