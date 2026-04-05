@@ -2596,3 +2596,109 @@ body.nav-open {
         animation-play-state: paused !important;
     }
 }
+
+/* --- PREMIUM COOKIE BANNER (SOLID DESIGN) --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 400px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-top: 3px solid var(--accent-color);
+    padding: 24px;
+    border-radius: 16px;
+    z-index: 9999;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 159, 28, 0.1);
+    display: none; /* Controlled by JS */
+    flex-direction: column;
+    gap: 16px;
+    animation: cookie-slide-up 0.6s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+@keyframes cookie-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.cookie-banner.hiding {
+    animation: cookie-fade-out 0.4s ease forwards;
+}
+
+@keyframes cookie-fade-out {
+    to {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+}
+
+.cookie-content h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--accent-color);
+}
+
+.cookie-content p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-cookie-accept {
+    background-color: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cookie-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+    filter: brightness(1.1);
+}
+
+.btn-cookie-info {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-cookie-info:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Responsive: Mobile Banner */
+@media (max-width: 768px) {
+    .cookie-banner {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        border-left: none;
+        border-right: none;
+        padding: 20px;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    }
+}

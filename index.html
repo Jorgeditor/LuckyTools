@@ -954,5 +954,36 @@
             });
         })();
     </script>
+    <!-- --- PREMIUM COOKIE BANNER (SOLID DESIGN) --- -->
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <h4>Cookies & Privacidad</h4>
+            <p>Utilizamos cookies propias para mejorar tu experiencia de navegación y mostrarte contenido personalizado. Al hacer clic en "Aceptar", consientes su uso.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn-cookie-accept" id="acceptCookies">Aceptar</button>
+            <a href="licenses.html" class="btn-cookie-info">Más información</a>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            if (cookieBanner && acceptBtn) {
+                if (!localStorage.getItem('lucky_cookies_accepted')) {
+                    setTimeout(() => {
+                        cookieBanner.style.display = 'flex';
+                    }, 2000);
+                }
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('lucky_cookies_accepted', 'true');
+                    cookieBanner.classList.add('hiding');
+                    setTimeout(() => {
+                        cookieBanner.style.display = 'none';
+                    }, 400);
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
