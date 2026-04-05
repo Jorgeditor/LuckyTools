@@ -130,7 +130,7 @@
                         </div>
                         
                         <!-- Global Swap Button (Outside wrappers to maintain total opacity) -->
-                        <div class="global-swap-btn" onclick="swapVideos()">
+                        <div class="global-swap-btn" style="display: none;" onclick="swapVideos()">
                             <div class="swap-popup-cool">Watch Full Features</div>
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -710,8 +710,8 @@
 
         // Initialize stack to always start with the primary video
         if (videoCardOne && videoCardTwo) {
-            updateVideoStack('promo-one');
-            localStorage.setItem('luckyTools_promo', 'promo-one');
+            updateVideoStack('promo-two');
+            localStorage.setItem('luckyTools_promo', 'promo-two');
         }
 
         // Smooth Scroll Reveal Animation
