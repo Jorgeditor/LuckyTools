@@ -16,7 +16,7 @@
     <header class="container">
         <div class="logo">
             <a href="index.html" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 10px;">
-                <img src="logo-demo.png" alt="Logo" style="width: 30px; height: 30px; object-fit: contain;">
+                <img src="logo-demo.png" alt="Logo" class="header-logo">
                 LuckyTools
             </a>
         </div>
@@ -42,29 +42,36 @@
         <a href="licenses.html">Licenses</a>
     </div>
 
-    <main>
-        <div class="full-width-bg reveal reveal-up active">
-            <section class="about-section container">
-                <div style="display: flex; align-items: center; justify-content: space-between; gap: 60px;" class="about-inner-flex">
-                    <div class="about-content">
-                        <h1>LuckyTools was created with a simple goal: tools that creative editors actually want to use.</h1>
-                        <p>Hi! I'm <strong>Jorgeditor</strong>. Having spent years editing content for top-tier creators, I developed a deep understanding of the unique friction points in the creative process. While programming began as a hobby, I soon realized there's no substitute for tools built <strong>by editors, for editors</strong>. I designed every function in LuckyTools based on features I always wished I had in my own workflow, combined with a vision for a perfectly synchronized editing ecosystem.</p>
-                        <p>What makes LuckyTools truly stand out is that it's an integrated system—it’s not just a collection of separate plugins, but a harmonized environment where every tool works in sync. When you invest in LuckyTools, you're not just buying a plugin; you're gaining access to a complete, connected workflow designed to save you time so you can focus on what really matters: being creative.</p>
+    <main class="inner-page-main">
+        <div class="container">
+            <div class="page-header-v2">
+                <h1>Built by Editors, <br><span style="color: var(--accent-color);">For Editors</span></h1>
+                <p>LuckyTools was born from a simple goal: to create the tools that professional editors actually want to use in their daily high-pressure workflows.</p>
+            </div>
+
+            <div class="about-grid-v2 animate-up">
+                <div class="about-content-v2">
+                    <div class="glass-card-v2" style="margin: 0; max-width: 100%;">
+                        <h2 style="font-family: 'Outfit', sans-serif; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">The Story Behind LuckyTools</h2>
+                        <p style="margin-bottom: 20px;">Hi! I'm <strong>Jorgeditor</strong>. After years of editing for top-tier creators, I felt the friction of repetitive tasks firsthand. LuckyTools started as a personal quest to automate my own workflow, and it evolved into a mission to empower editors everywhere.</p>
                         
-                        <div class="about-links">
-                            <a href="index.html" class="btn-outline">Home &rarr;</a>
-                            <a href="contact.html" class="btn-outline">Contact &rarr;</a>
-                            <a href="https://x.com/jorgeditor" target="_blank" class="btn-outline">Social &rarr;</a>
+                        <p style="margin-bottom: 30px; opacity: 0.8;">What makes LuckyTools unique is its <strong>integrated ecosystem</strong>. It's not just a set of disconnected plugins—it's a harmonized environment where every tool works in sync to save you hours of manual labor.</p>
+                        
+                        <div class="about-links" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <a href="index.html" class="social-item-v2" style="padding: 10px 20px; font-size: 14px;">Home &rarr;</a>
+                            <a href="contact.html" class="social-item-v2" style="padding: 10px 20px; font-size: 14px;">Contact &rarr;</a>
                         </div>
-                        <div class="discount-code" id="discountBox" title="Click to copy code" style="margin-top: 40px;" translate="no">
-                            Use code: <span class="code-highlight" id="promoCode">BUSCOEDITOR</span> for the $$$ deal!
-                        </div>
-                    </div>
-                    <div class="about-visual" style="flex: 0 0 45%;">
-                        <img src="about-demo.png" alt="LuckyTools About" class="about-image">
                     </div>
                 </div>
-            </section>
+
+                <div class="about-visual-v2">
+                    <img src="about-demo.png" alt="LuckyTools About">
+                </div>
+            </div>
+
+            <div class="discount-code" id="discountBox" title="Click to copy code" style="margin: 60px auto 0;" translate="no">
+                Use code: <span class="code-highlight" id="promoCode">BUSCOEDITOR</span> for the $$$ deal!
+            </div>
         </div>
     </main>
 
