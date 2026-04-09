@@ -1,4 +1,4 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const file = 'c:/Users/jorge/AppData/Roaming/Adobe/CEP/extensions/com.jorgeditor.luckytools/GITHUBPAGE/LuckyTools-main/index.html';
 let html = fs.readFileSync(file, 'utf8');
 
@@ -14,8 +14,8 @@ const newMain =     <main>
                     <h1>Tools for <span>Creative Editors</span></h1>
                     <p>LuckyTools is a premium suite of plugins for Adobe Premiere Pro designed to automate tedious tasks, streamline your workflow, and let you focus on what really matters: your creativity. Everything is a shortcut away ⚡</p>
                     <div class="price-box">
-                        <span class="price-strikethrough">129.99</span>
-                        <span class="price-current">69.99</span>
+                        <span class="price-strikethrough">$$$</span>
+                        <span class="price-current">$$$</span>
                     </div>
                     <a href="#" class="btn-download">
                         <i class="fas fa-shopping-cart"></i> Get LuckyTools Now
@@ -24,7 +24,7 @@ const newMain =     <main>
             </div>
         </section>
 
-        <!-- COMMANDS AND FEATURES GRID -->
+        <!-- SHORTCUTS AND FEATURES GRID -->
         <div class="container">
             <div class="section-divider">
                 <h2>The Power of LuckyTools</h2>
@@ -102,18 +102,18 @@ const newMain =     <main>
                 </div>
             </div>
 
-            <!-- LuckyCommands -->
+            <!-- LuckyShortcuts -->
             <div class="feature-row reverse">
                 <div class="feature-visual">
                     <div class="neon-glow"></div>
-                    <img src="luckycommands.png" alt="LuckyCommands" class="feature-image">
+                    <img src="luckyshortcuts.png" alt="LuckyShortcuts" class="feature-image">
                 </div>
                 <div class="feature-content">
                     <div class="feature-badge">
                         <div class="dot"></div>
                         <span>Control • Power</span>
                     </div>
-                    <h3>LuckyCommands: <br>Turbo Shortcuts</h3>
+                    <h3>LuckyShortcuts: <br>Turbo Hotkeys</h3>
                     <p>Assign every action inside LuckyTools to your keyboard. Move faster with zero latency when applying presets, transitions, or effects directly to your clips.</p>
                 </div>
             </div>
