@@ -14,6 +14,26 @@
         .faq-item.open .faq-answer {
             max-height: 1200px !important;
         }
+        
+        @keyframes warningBounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-3px);}
+        }
+        .technical-warning {
+            border: 1px dashed #ff4d4d;
+            background: rgba(255, 77, 77, 0.05);
+            color: #ff4d4d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            animation: warningBounce 3s infinite;
+            font-size: 0.9em;
+        }
+        .technical-warning strong {
+            color: #ff4d4d;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 
@@ -426,7 +446,9 @@
                     <p>Access everything from one place. Find tools, effects, presets, and more instantly. LuckySearch appears and disappears on demand, keeping your workspace clean and fully connected to all your shortcuts.</p>
                     <p>Make it truly yours with extensive customization options. Change colors, pick your favorite typography, or even rename the search bar to match your personal vibe. With thousands of possible combinations, you can tailor everything to feel perfectly aligned with your workflow.</p>
                     <p>Boost your efficiency with dynamic shortcut buttons that automatically surface your most recently used effects for instant re-application. You can also curate your own selection of favorites, pinning them directly to the hub for immediate, one-click access to your most essential tools.</p>
-                    <p style="font-size: 0.85em; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;"><strong>Technical Note on Presets:</strong> Please be aware that due to inherent Adobe API limitations, custom interpolation curves cannot be preserved when presets are programmatically applied. This is a platform-wide constraint. some animations may feel slightly different, requiring minor manual adjustments to your easing handles for precise timing.</p>
+                    <div class="technical-warning">
+                        <strong>Critical Note on Presets:</strong> Please be aware that due to inherent Adobe API limitations, custom interpolation curves CANNOT be preserved when presets are programmatically applied. This is a platform-wide constraint. Your animations <strong>will look extremely different</strong>, requiring manual adjustments to your easing handles for precise timing.
+                    </div>
                 </div>
             </div>
 
