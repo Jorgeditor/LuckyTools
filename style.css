@@ -189,7 +189,7 @@ main {
 }
 
 .hero-card-column {
-    flex: 0 0 390px;
+    flex: 0 0 420px; /* Increased from 390px to prevent jumping */
 }
 
 .hero-video-column {
@@ -318,7 +318,7 @@ h1 span {
     display: inline-block;
     position: relative;
     transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
-    min-width: 140px; /* Ensures space for the longest word like "Creators" from the start */
+    min-width: 150px; /* Increased from 140px for extra safety */
 }
 
 .word-rotate.exit {
