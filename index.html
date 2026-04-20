@@ -1080,6 +1080,7 @@
             let currentX = 0;
             let speed = 0.6; // Speed of auto-scroll
             let animationId;
+            let moved = false;
 
             // Pause animation on hover
             let isHovered = false;
@@ -1111,7 +1112,7 @@
             // Drag Logic
             const startDrag = (e) => {
                 isDragging = true;
-                marquee.classList.add('is-dragging');
+                moved = false;
                 startX = (e.pageX || e.touches[0].pageX);
                 scrollLeft = currentX;
             };
@@ -1120,30 +1121,48 @@
                 if (!isDragging) return;
                 isDragging = false;
                 marquee.classList.remove('is-dragging');
+                
+                // Use a small timeout to allow the 'click' event to fire or be prevented
+                setTimeout(() => { moved = false; }, 10);
             };
 
             const moveDrag = (e) => {
                 if (!isDragging) return;
                 
                 const x = (e.pageX || e.touches[0].pageX);
-                const walk = (x - startX) * 1.5; 
-                currentX = scrollLeft + walk;
-
-                const loopPoint = getLoopPoint();
+                const walk = (x - startX);
                 
-                // Infinite seamless wrap
-                if (currentX > 0) {
-                    currentX -= loopPoint;
-                    startX = x;
-                    scrollLeft = currentX;
-                } else if (Math.abs(currentX) >= loopPoint) {
-                    currentX += loopPoint;
-                    startX = x;
-                    scrollLeft = currentX;
-                }
+                if (Math.abs(walk) > 5) {
+                    if (!moved) {
+                        moved = true;
+                        marquee.classList.add('is-dragging');
+                    }
+                    currentX = scrollLeft + walk * 1.5;
 
-                track.style.transform = `translateX(${currentX}px)`;
+                    const loopPoint = getLoopPoint();
+                    
+                    // Infinite seamless wrap
+                    if (currentX > 0) {
+                        currentX -= loopPoint;
+                        startX = x;
+                        scrollLeft = currentX;
+                    } else if (Math.abs(currentX) >= loopPoint) {
+                        currentX += loopPoint;
+                        startX = x;
+                        scrollLeft = currentX;
+                    }
+
+                    track.style.transform = `translateX(${currentX}px)`;
+                }
             };
+
+            // Prevent clicks on links if dragging happened
+            track.addEventListener('click', (e) => {
+                if (moved) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, true); // Use capture phase
 
             marquee.addEventListener('mousedown', startDrag);
             marquee.addEventListener('touchstart', startDrag, { passive: true });
