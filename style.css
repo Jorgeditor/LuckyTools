@@ -1117,14 +1117,24 @@ html[_mstlang] .feature-card ul li {
     align-items: center;
     gap: 15px;
     z-index: 1;
+}
+
+.reviewer-info a {
     text-decoration: none;
-    cursor: pointer;
+    color: inherit;
     transition: opacity 0.3s ease;
 }
 
-.reviewer-info:hover p, .reviewer-info:hover span, .reviewer-info:hover {
+.reviewer-info a:hover {
     opacity: 0.8;
 }
+
+.reviewer-profile-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 
 .avatar {
     width: 45px;
