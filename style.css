@@ -296,7 +296,7 @@ main {
 
 h1 {
     font-family: 'Outfit', sans-serif;
-    font-size: 24px; /* Reduced further to ensure it fits without wrapping and eliminate jumping */
+    font-size: 34px; /* Restored original size for "LuckyTools for" */
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.1;
@@ -309,8 +309,9 @@ h1 span {
     background-clip: text;
     color: transparent;
     animation: gradientFlow 5s linear infinite;
-    display: inline-block; /* Changed back to inline-block as stability is now handled by .word-rotate min-width */
-    white-space: nowrap; /* Forces "Creative [Word]" to stay on a single line */
+    display: inline-block; 
+    white-space: nowrap; 
+    font-size: 22px; /* Set to be approx 10px smaller than the main heading */
 }
 
 /* Word Rotation Animation */
