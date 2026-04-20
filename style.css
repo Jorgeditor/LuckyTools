@@ -311,7 +311,7 @@ h1 span {
     animation: gradientFlow 5s linear infinite;
     display: inline-block; 
     white-space: nowrap; 
-    font-size: 22px; /* Set to be approx 10px smaller than the main heading */
+    font-size: 28px; /* Slightly larger than before, but still smaller than the main heading to prevent jumps */
 }
 
 /* Word Rotation Animation */
@@ -319,7 +319,7 @@ h1 span {
     display: inline-block;
     position: relative;
     transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
-    min-width: 120px; /* Reduced from 150px as font size is smaller now */
+    min-width: 150px; /* Increased to accommodate the larger font size */
 }
 
 .word-rotate.exit {
