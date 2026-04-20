@@ -134,7 +134,7 @@
                         <div id="videoCardOne" class="premium-video-wrapper video-layer" style="display: none;" onclick="this.classList.contains('background') && swapVideos()">
                             <iframe 
                                 id="promoVideo1"
-                                data-yt-src="https://www.youtube.com/embed/cA79Srtvwa4?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
+                                data-yt-src="https://www.youtube.com/embed/yIJ_S32np24?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
                                 title="LuckyTools PROMO ONE"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -146,7 +146,7 @@
                             <iframe 
                                 id="promoVideo2"
                                 loading="lazy"
-                                data-yt-src="https://www.youtube.com/embed/cA79Srtvwa4?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
+                                data-yt-src="https://www.youtube.com/embed/yIJ_S32np24?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
                                 title="LuckyTools PROMO TWO"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -938,15 +938,15 @@
                     
                     if (ytPlayer2 && typeof ytPlayer2.cueVideoById === "function") {
                         if (isPlaying) {
-                            ytPlayer2.loadVideoById({'videoId': '3zrI3XOWFMs', 'startSeconds': currentTime});
+                            ytPlayer2.loadVideoById({'videoId': 'toKUxkLZoqw', 'startSeconds': currentTime});
                         } else {
-                            ytPlayer2.cueVideoById({'videoId': '3zrI3XOWFMs', 'startSeconds': currentTime});
+                            ytPlayer2.cueVideoById({'videoId': 'toKUxkLZoqw', 'startSeconds': currentTime});
                         }
                     } else {
                         // Fallback logic
                         const startParam = currentTime > 0 ? `&start=${Math.floor(currentTime)}` : '';
                         const autoplayParam = isPlaying ? `&autoplay=1` : `&autoplay=0`;
-                        targetVideo.src = `https://www.youtube.com/embed/3zrI3XOWFMs?controls=1&mute=0&rel=0&enablejsapi=1${startParam}${autoplayParam}`;
+                        targetVideo.src = `https://www.youtube.com/embed/toKUxkLZoqw?controls=1&mute=0&rel=0&enablejsapi=1${startParam}${autoplayParam}`;
                     }
                     targetVideo.dataset.swapped = "true";
                 }
@@ -964,9 +964,9 @@
                     
                     if (ytPlayer2 && typeof ytPlayer2.cueVideoById === "function") {
                         if (isPlaying) {
-                            ytPlayer2.loadVideoById({'videoId': 'cA79Srtvwa4', 'startSeconds': currentTime});
+                            ytPlayer2.loadVideoById({'videoId': 'yIJ_S32np24', 'startSeconds': currentTime});
                         } else {
-                            ytPlayer2.cueVideoById({'videoId': 'cA79Srtvwa4', 'startSeconds': currentTime});
+                            ytPlayer2.cueVideoById({'videoId': 'yIJ_S32np24', 'startSeconds': currentTime});
                         }
                     } else {
                         // Fallback
