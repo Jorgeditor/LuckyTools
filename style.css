@@ -169,42 +169,47 @@ nav a:hover {
 /* Ecosystem Link Badge */
 .nav-eco-link {
     position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 .free-badge {
     position: absolute;
-    top: -28px;
+    top: 35px; /* Below the link */
     left: 50%;
     transform: translateX(-50%);
     background: #ffcc00;
     color: #000;
-    font-size: 8px;
-    font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 4px;
+    font-size: 14px; /* Much larger */
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 8px;
     white-space: nowrap;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
-    animation: badge-float 2s infinite ease-in-out;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 30px rgba(255, 204, 0, 0.6);
+    animation: badge-float-rev 2.5s infinite ease-in-out;
     pointer-events: none;
     line-height: 1;
-    z-index: 100;
+    z-index: 1000;
+    opacity: 1 !important; /* Force no opacity */
+    border: 2px solid #000;
 }
 
 .free-badge::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    top: -10px; /* Arrow at top pointing up */
     left: 50%;
     transform: translateX(-50%);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #ffcc00;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffcc00;
+    border-top: none;
 }
 
-@keyframes badge-float {
+@keyframes badge-float-rev {
     0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-5px); }
+    50% { transform: translateX(-50%) translateY(8px); }
 }
 
 main {
