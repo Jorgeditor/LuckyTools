@@ -141,21 +141,22 @@
             color: white;
         }
         .req-btn-confirm {
-            background: #ff4d4d;
-            color: white;
+            background: #ffcc00;
+            color: #000;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 24px;
             border-radius: 6px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             transition: all 0.2s;
         }
         .req-btn-confirm:hover {
-            background: #ff3333;
-            transform: scale(1.05);
+            background: #ffdb4d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
         }
     </style>
 </head>
@@ -192,6 +193,10 @@
             </div>
             <a href="contact.html">Contact</a>
             <a href="licenses.html">Licenses</a>
+            <div class="nav-eco-link" style="margin-left: 30px;">
+                <a href="guide.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Guide</a>
+                <span class="free-badge">LEARN!!</span>
+            </div>
         </nav>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
             <span></span>
@@ -213,6 +218,11 @@
         <a href="contact.html">Contact</a>
         <div class="nav-overlay-divider"></div>
         <a href="licenses.html">Licenses</a>
+        <div class="nav-overlay-divider"></div>
+        <div class="nav-eco-link" style="margin-left: 0; margin-bottom: 20px;">
+            <a href="guide.html" style="margin-left: 0; opacity: 1; color: var(--accent-color); font-size: 24px;">Guide</a>
+            <span class="free-badge" style="top: 40px;">LEARN!!</span>
+        </div>
     </div>
 
     <main>
@@ -266,7 +276,7 @@
                         <div id="videoCardOne" class="premium-video-wrapper video-layer" style="display: none;" onclick="this.classList.contains('background') && swapVideos()">
                             <iframe 
                                 id="promoVideo1"
-                                data-yt-src="https://www.youtube.com/embed/_Y7NjzwwbHU?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
+                                data-yt-src="https://www.youtube.com/embed/kZjAILgHbWE?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
                                 title="LuckyTools PROMO ONE"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -278,7 +288,7 @@
                             <iframe 
                                 id="promoVideo2"
                                 loading="lazy"
-                                data-yt-src="https://www.youtube.com/embed/_Y7NjzwwbHU?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
+                                data-yt-src="https://www.youtube.com/embed/kZjAILgHbWE?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
                                 title="LuckyTools PROMO TWO"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -378,7 +388,7 @@
                     <!-- Original 4 Reviews -->
                     <!-- Review 1 -->
                     <div class="review-card">
-                        <p class="review-text">The transition shortcuts are a total lifesaver for my rough cuts. It's not 100% perfect yet, but the potential is huge and I'm excited to see how they keep polishing it.</p>
+                        <p class="review-text">I've been using the transition shortcuts since the first builds and they've saved my skin on many quick deliveries. It's not 100% perfect yet, but the potential here is insane. You're gaining real life time, highly recommended.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/gezfilms" target="_blank" class="reviewer-profile-link">
                                 <img src="dylan.jpg" alt="Dylan G" class="avatar">
@@ -396,7 +406,7 @@
 
                     <!-- Review 2 -->
                     <div class="review-card">
-                        <p class="review-text">We've seen top-tier editors in our community adapting LuckyTools to speed up their deliveries. A fantastic investment for any professional.</p>
+                        <p class="review-text">Hemos visto a editores top de la comunidad metiéndole caña a LuckyTools para llegar a tiempo a sus entregas. Es una inversión que se paga sola si valoras tu tiempo y tu salud mental.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BuscoEditor" target="_blank" class="reviewer-profile-link">
                                 <img src="busco.jpg" alt="Busco Editor" class="avatar">
@@ -414,7 +424,7 @@
 
                     <!-- Review 3 -->
                     <div class="review-card">
-                        <p class="review-text">Maneja keyframes mejor que Premiere. Respecto a los atajos de teclado está bien; aunque no existen macros ni nada por el estilo, me es suficiente para el día a día.</p>
+                        <p class="review-text">Se que no tenemos macros aquí lo cual es medio feo pero ya que, para el laburo diario, me sobra y me basta. El control de keyframes es mil veces más fluido que el de Premiere nativo.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/Giovanni_0108" target="_blank" class="reviewer-profile-link">
                                 <img src="oury.jpg" alt="Oury Editor" class="avatar">
@@ -432,7 +442,7 @@
 
                     <!-- Review 4 -->
                     <div class="review-card">
-                        <p class="review-text">Really solid tools. The anchor point control is surgical. However, Unnest is a bit slow and only works on one clip at a time; it seems it just does Copy/Paste internally. A shame it's not more advanced, but at least the option is there!</p>
+                        <p class="review-text">Lo del Anchor Point es quirúrgico, no hay con qué darle. Eso sí, el Unnest está un poco "verde" todavía y me gustaría que procesara clips en lote en la v2. Al menos se nota que el proyecto está vivo y escuchan el feedback de los que editamos de verdad.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BlackBullAE" target="_blank" class="reviewer-profile-link">
                                 <img src="blackbull.jpg" alt="BlackBull Designer" class="avatar">
@@ -468,7 +478,7 @@
                     
                     <!-- Review 6 -->
                     <div class="review-card">
-                        <p class="review-text">Ta' bueno, ahorra tiempo y "plata", aun le falta refinar varias cosas pero si lo sigue actualizando irá a bien. La personalización esta buena, pero parece que se centraron más en eso que en alguna funciones, espero que sigan actualizandolo o si no lo pirateo</p>
+                        <p class="review-text">Ta' bueno, ahorra tiempo y "plata", aun le falta refinar varias cosas pero si se sigue actualizando irá bien. La personalización está buena pero está demasiado centrado en ello más que algunas funciones, espero que lleguen más actualizaciones o sino me vuelvo pirata y lo publico gratis a todos</p>
                         <div class="reviewer-info">
                             <a href="https://www.youtube.com/@MarckDBM" target="_blank" class="reviewer-profile-link">
                                 <img src="marck.jpg?v=1" alt="Marck" class="avatar">
@@ -488,7 +498,7 @@
                     <!-- Duplicated 4 Reviews for seamless loop -->
                     <!-- Review 1 -->
                     <div class="review-card">
-                        <p class="review-text">Since I installed this suite, my rough cuts take half the time. The transition shortcuts are literally a lifesaver. Highly recommended!</p>
+                        <p class="review-text">I've been using the transition shortcuts since the first builds and they've saved my skin on many quick deliveries. It's not 100% perfect yet, but the potential here is insane. You're gaining real life time, highly recommended.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/gezfilms" target="_blank" class="reviewer-profile-link">
                                 <img src="dylan.jpg" alt="Dylan G" class="avatar">
@@ -506,7 +516,7 @@
 
                     <!-- Review 2 -->
                     <div class="review-card">
-                        <p class="review-text">We've seen top-tier editors in our community adapting LuckyTools to speed up their deliveries. A fantastic investment for any professional.</p>
+                        <p class="review-text">Hemos visto a editores top de la comunidad metiéndole caña a LuckyTools para llegar a tiempo a sus entregas. Es una inversión que se paga sola si valoras tu tiempo y tu salud mental.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BuscoEditor" target="_blank" class="reviewer-profile-link">
                                 <img src="busco.jpg" alt="Busco Editor" class="avatar">
@@ -524,7 +534,7 @@
 
                     <!-- Review 3 -->
                     <div class="review-card">
-                        <p class="review-text">Maneja keyframes mejor que Premiere. Respecto a los atajos de teclado está bien; aunque no existen macros ni nada por el estilo, me es suficiente para el día a día.</p>
+                        <p class="review-text">Se que no tenemos macros aquí lo cual es medio feo pero ya que, para el laburo diario, me sobra y me basta. El control de keyframes es mil veces más fluido que el de Premiere nativo.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/Giovanni_0108" target="_blank" class="reviewer-profile-link">
                                 <img src="oury.jpg" alt="Oury Editor" class="avatar">
@@ -542,7 +552,7 @@
 
                     <!-- Review 4 -->
                     <div class="review-card">
-                        <p class="review-text">Really solid tools. The anchor point control is surgical. However, Unnest is a bit slow and only works on one clip at a time; it seems it just does Copy/Paste internally. A shame it's not more advanced, but at least the option is there!</p>
+                        <p class="review-text">Lo del Anchor Point es quirúrgico, no hay con qué darle. Eso sí, el Unnest está un poco "verde" todavía y me gustaría que procesara clips en lote en la v2. Al menos se nota que el proyecto está vivo y escuchan el feedback de los que editamos de verdad.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BlackBullAE" target="_blank" class="reviewer-profile-link">
                                 <img src="blackbull.jpg" alt="BlackBull Designer" class="avatar">
@@ -578,7 +588,7 @@
 
                     <!-- Review 6 -->
                     <div class="review-card">
-                        <p class="review-text">Ta' bueno, ahorra tiempo y "plata", aun le falta refinar varias cosas pero si lo sigue actualizando irá a bien. La personalización esta buena, pero parece que se centraron más en eso que en alguna funciones, espero que sigan actualizandolo o si no lo pirateo</p>
+                        <p class="review-text">Ta' bueno, ahorra tiempo y "plata", aun le falta refinar varias cosas pero si se sigue actualizando irá bien. La personalización está buena pero está demasiado centrado en ello más que algunas funciones, espero que lleguen más actualizaciones o sino me vuelvo pirata y lo publico gratis a todos</p>
                         <div class="reviewer-info">
                             <a href="https://www.youtube.com/@MarckDBM" target="_blank" class="reviewer-profile-link">
                                 <img src="marck.jpg?v=1" alt="Marck" class="avatar">
@@ -853,6 +863,154 @@
                 </div>
             </div>
 
+            <!-- FREE CURVES CALLOUT -->
+            <div class="free-curves-callout reveal reveal-up" style="
+                margin: 0 0 60px 0;
+                background: linear-gradient(135deg, rgba(255,204,0,0.04) 0%, rgba(100,200,255,0.04) 100%);
+                border: 1px solid rgba(255,204,0,0.2);
+                border-radius: 18px;
+                padding: 40px 44px;
+                position: relative;
+                overflow: hidden;
+            ">
+                <!-- Decorative glow blob -->
+                <div style="
+                    position: absolute; top: -60px; right: -60px;
+                    width: 220px; height: 220px;
+                    background: radial-gradient(circle, rgba(255,204,0,0.12) 0%, transparent 70%);
+                    border-radius: 50%;
+                    pointer-events: none;
+                "></div>
+                <div style="
+                    position: absolute; bottom: -50px; left: 30px;
+                    width: 160px; height: 160px;
+                    background: radial-gradient(circle, rgba(100,180,255,0.07) 0%, transparent 70%);
+                    border-radius: 50%;
+                    pointer-events: none;
+                "></div>
+
+                <!-- Header row -->
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <div style="
+                        background: linear-gradient(135deg, #ffcc00, #ff9900);
+                        color: #000;
+                        font-weight: 800;
+                        font-size: 0.7em;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        padding: 5px 14px;
+                        border-radius: 30px;
+                        white-space: nowrap;
+                        font-family: 'Outfit', sans-serif;
+                    ">🎁 FREE ALTERNATIVE</div>
+                    <div style="
+                        font-size: 0.75em;
+                        color: #aaa;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        font-family: 'Outfit', sans-serif;
+                    ">Also works in <strong style="color:#64b4ff;">After Effects</strong> & <strong style="color:#9f70fd;">Premiere Pro</strong></div>
+                </div>
+
+                <!-- Main content -->
+                <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 260px;">
+                        <h3 style="
+                            font-family: 'Outfit', sans-serif;
+                            font-size: 1.9em;
+                            font-weight: 800;
+                            color: white;
+                            margin: 0 0 14px 0;
+                            line-height: 1.2;
+                        ">Want free curves? <br><span style="color: #ffcc00;">Graph Editor</span> has you covered.</h3>
+                        <p style="color: #bbb; line-height: 1.7; margin: 0 0 18px 0; font-size: 0.97em;">
+                            If you're not ready to invest in LuckyCurves yet — or you work in <strong style="color: white;">After Effects</strong> — <strong style="color: white;">Graph Editor by @Animateo</strong> is a completely <strong style="color: #ffcc00;">free</strong> extension you should know about. It's available for both Premiere Pro and After Effects, and it's surprisingly powerful.
+                        </p>
+                        <p style="color: #bbb; line-height: 1.7; margin: 0 0 22px 0; font-size: 0.97em;">
+                            In fact, in terms of curve <em>types</em>, it's even more configurable than LuckyCurves: it offers <strong style="color: white;">two graph modes</strong> — a <strong style="color: #64b4ff;">Speed Graph</strong> (the classic ease-in/ease-out style, similar to what you'd expect in Premiere) and a <strong style="color: #a78bfa;">Value Graph</strong> (like After Effects' traditional graph editor, letting you push values beyond their natural range for more expressive motion). On top of that, you can save your own curves and build a favorites library.
+                        </p>
+                        <p style="color: #bbb; line-height: 1.7; margin: 0 0 15px 0; font-size: 0.97em;">
+                            Plus, its creator <strong>Mateo</strong> is a <strong style="color: white;">Qualified Editor</strong> over at the <a href="https://discord.gg/hEa7TpDhGP" target="_blank" style="color: #ffcc00; text-decoration: none;">Busco Editor</a> server. Giving his extension a try is a great way to support trusted members of our community!
+                        </p>
+                        <p style="color: #bbb; line-height: 1.7; margin: 0 0 22px 0; font-size: 0.97em;">
+                            Best of all, Graph Editor is <strong style="color: white;">Open Source</strong>. This means that anyone can peek under the hood, learn from the code, customize their own curves plugin for Premiere Pro and After Effects, or add whatever new functions they desire.
+                        </p>
+
+                        <!-- Feature pills -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
+                            <span style="background: rgba(100,180,255,0.1); border: 1px solid rgba(100,180,255,0.3); color: #64b4ff; padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600;">
+                                <i class="fas fa-wave-square" style="margin-right: 6px;"></i>Speed Graph
+                            </span>
+                            <span style="background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.3); color: #a78bfa; padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600;">
+                                <i class="fas fa-chart-line" style="margin-right: 6px;"></i>Value Graph
+                            </span>
+                            <span style="background: rgba(255,204,0,0.08); border: 1px solid rgba(255,204,0,0.25); color: #ffcc00; padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600;">
+                                <i class="fas fa-star" style="margin-right: 6px;"></i>Save Favorites
+                            </span>
+                            <span style="background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); color: #2ecc71; padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600;">
+                                <i class="fas fa-code-branch" style="margin-right: 6px;"></i>Open Source
+                            </span>
+                            <span style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #ddd; padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600;">
+                                <i class="fas fa-tag" style="margin-right: 6px;"></i>Completely Free
+                            </span>
+                        </div>
+
+                        <!-- CTA button -->
+                        <a href="ecosystem.html" style="
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 10px;
+                            background: linear-gradient(135deg, rgba(255,204,0,0.15), rgba(255,153,0,0.1));
+                            border: 1px solid rgba(255,204,0,0.5);
+                            color: #ffcc00;
+                            padding: 13px 28px;
+                            border-radius: 10px;
+                            font-weight: 700;
+                            font-size: 0.95em;
+                            text-decoration: none;
+                            font-family: 'Outfit', sans-serif;
+                            transition: all 0.25s ease;
+                            box-shadow: 0 0 20px rgba(255,204,0,0.08);
+                        "
+                        onmouseover="this.style.background='linear-gradient(135deg,rgba(255,204,0,0.28),rgba(255,153,0,0.2))'; this.style.boxShadow='0 0 30px rgba(255,204,0,0.2)'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='linear-gradient(135deg,rgba(255,204,0,0.15),rgba(255,153,0,0.1))'; this.style.boxShadow='0 0 20px rgba(255,204,0,0.08)'; this.style.transform='translateY(0)';">
+                            <i class="fas fa-bolt"></i>
+                            See it in the Ecosystem
+                            <i class="fas fa-arrow-right" style="font-size: 0.85em;"></i>
+                        </a>
+                    </div>
+
+                    <!-- Right side: comparison note -->
+                    <div style="
+                        min-width: 230px;
+                        max-width: 280px;
+                        background: rgba(255,255,255,0.03);
+                        border: 1px solid rgba(255,255,255,0.08);
+                        border-radius: 12px;
+                        padding: 22px 24px;
+                        font-size: 0.88em;
+                        flex-shrink: 0;
+                    ">
+                        <div style="font-family:'Outfit',sans-serif; font-weight:700; color:white; margin-bottom:14px; font-size:1.05em;">
+                            <i class="fas fa-balance-scale" style="color:#ffcc00; margin-right:8px;"></i>Quick Comparison
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:12px;">
+                            <div>
+                                <div style="color:#ffcc00; font-weight:700; margin-bottom:4px;">LuckyCurves</div>
+                                <div style="color:#aaa; line-height:1.5;">Laser-focused. Apply, clear & save custom profiles inside Premiere Pro with a single click.</div>
+                            </div>
+                            <div style="border-top:1px dashed rgba(255,255,255,0.08); padding-top:12px;">
+                                <div style="color:#64b4ff; font-weight:700; margin-bottom:4px;">Graph Editor <span style="color:#555; font-weight:400; font-size:0.85em;">by @Animateo</span></div>
+                                <div style="color:#aaa; line-height:1.5;">Free. Works in AE <em>and</em> Premiere. Two graph types for deeper curve control. Great free starting point.</div>
+                            </div>
+                        </div>
+                        <div style="margin-top:16px; padding-top:14px; border-top:1px dashed rgba(255,255,255,0.08); color:#666; font-size:0.82em; font-style:italic;">
+                            Both tools can coexist. Use whichever fits your current project.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- LuckyAnchor -->
             <div class="feature-row">
                 <div class="feature-visual reveal reveal-left">
@@ -872,7 +1030,6 @@
                     <ul class="feature-list">
                         <li><span>>></span> 25-Point Alignment</li>
                         <li><span>>></span> Custom Offsets</li>
-                        <li><span>>></span> Shuffle Anchor</li>
                         <li><span>>></span> Real-time Update</li>
                     </ul>
                 </div>
@@ -1078,15 +1235,15 @@
                     
                     if (ytPlayer2 && typeof ytPlayer2.cueVideoById === "function") {
                         if (isPlaying) {
-                            ytPlayer2.loadVideoById({'videoId': 'I_zrtYdQu5E', 'startSeconds': currentTime});
+                            ytPlayer2.loadVideoById({'videoId': 'KTOYy36_FGk', 'startSeconds': currentTime});
                         } else {
-                            ytPlayer2.cueVideoById({'videoId': 'I_zrtYdQu5E', 'startSeconds': currentTime});
+                            ytPlayer2.cueVideoById({'videoId': 'KTOYy36_FGk', 'startSeconds': currentTime});
                         }
                     } else {
                         // Fallback logic
                         const startParam = currentTime > 0 ? `&start=${Math.floor(currentTime)}` : '';
                         const autoplayParam = isPlaying ? `&autoplay=1` : `&autoplay=0`;
-                        targetVideo.src = `https://www.youtube.com/embed/I_zrtYdQu5E?controls=1&mute=0&rel=0&enablejsapi=1${startParam}${autoplayParam}`;
+                        targetVideo.src = `https://www.youtube.com/embed/KTOYy36_FGk?controls=1&mute=0&rel=0&enablejsapi=1${startParam}${autoplayParam}`;
                     }
                     targetVideo.dataset.swapped = "true";
                 }
@@ -1104,9 +1261,9 @@
                     
                     if (ytPlayer2 && typeof ytPlayer2.cueVideoById === "function") {
                         if (isPlaying) {
-                            ytPlayer2.loadVideoById({'videoId': '_Y7NjzwwbHU', 'startSeconds': currentTime});
+                            ytPlayer2.loadVideoById({'videoId': 'kZjAILgHbWE', 'startSeconds': currentTime});
                         } else {
-                            ytPlayer2.cueVideoById({'videoId': '_Y7NjzwwbHU', 'startSeconds': currentTime});
+                            ytPlayer2.cueVideoById({'videoId': 'kZjAILgHbWE', 'startSeconds': currentTime});
                         }
                     } else {
                         // Fallback
@@ -1366,7 +1523,7 @@
             </div>
             <div class="req-modal-footer">
                 <button id="cancelBuyBtn" class="req-btn-cancel">Cancel</button>
-                <a href="https://jorgeditor.lemonsqueezy.com/checkout/buy/dce27ab4-d491-40fd-896e-76ae71faa97d" class="req-btn-confirm">I Understand, Proceed to Checkout</a>
+                <a href="https://luckytpr.lemonsqueezy.com/checkout/buy/dce27ab4-d491-40fd-896e-76ae71faa97d" class="req-btn-confirm">Proceder a comprar en LemonSqueezy</a>
             </div>
         </div>
     </div>
