@@ -86,6 +86,31 @@
                 position: static;
             }
         }
+        @keyframes subtle-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.15); }
+            50% { box-shadow: 0 0 25px rgba(0, 212, 255, 0.3); }
+        }
+        .property-highlight {
+            border: 1px solid #00d4ff;
+            background: rgba(0, 212, 255, 0.08);
+            color: #00d4ff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95em;
+            font-weight: 700;
+            animation: subtle-glow 3s infinite ease-in-out;
+        }
+        .property-highlight i {
+            font-size: 1.2em;
+        }
+        .property-highlight span {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
@@ -291,6 +316,11 @@
                     <section id="luckyanchor" class="guide-section">
                         <h2><i class="fas fa-crosshairs" style="margin-right: 10px;"></i>LuckyAnchor</h2>
                         <p><strong>Surgical Control</strong> for mathematical repositioning of anchor points.</p>
+                        <div class="property-highlight">
+                            <i class="fas fa-check-circle"></i>
+                            Works for both <span>Motion</span> & <span>Transform</span>
+                        </div>
+
                         <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
                             <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
                             <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
