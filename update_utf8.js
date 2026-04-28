@@ -238,17 +238,17 @@ const newMain =     <main>
                         <span>Precision • Layout</span>
                     </div>
                     <h3>LuckyAnchor: <br>Surgical Control</h3>
-                    <p>Precision is key to great editing. Reposition the anchor point of your clips with mathematical exactness, saving minutes of frustrating manual adjustments.</p>
+                    <p>Precision is key to great editing. Reposition the anchor point of your clips with mathematical exactness, saving minutes of frustrating manual adjustments. Access it instantly via your assigned keyboard shortcuts or launch it directly from the LuckySearch hub.</p>
                     <div class="property-highlight">
                         <i class="fas fa-check-circle"></i>
                         Works for both <span>Motion</span> & <span>Transform</span>
                     </div>
-
                     <ul class="feature-list">
                         <li><span>>></span> 9-Point Alignment</li>
                         <li><span>>></span> Custom Offsets</li>
-                        <li><span>>></span> Shuffle Anchor</li>
+                        <li><span>>></span> Keyboard Shortcuts</li>
                         <li><span>>></span> Real-time Update</li>
+                        <li><span>>></span> LuckySearch Integration</li>
                     </ul>
                 </div>
             </div>
