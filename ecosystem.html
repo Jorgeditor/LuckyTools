@@ -94,35 +94,35 @@
             color: #000;
         }
 
-        /* Plugin Slideshow Styles */
-        .plugin-slideshow {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            background: #0f0f0f;
-            border-bottom: 1px solid #333;
-            overflow: hidden;
+        /* Plugin Gallery Thumbnails */
+        .plugin-gallery {
+            display: flex;
+            gap: 10px;
+            padding: 15px 20px 0 20px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #555 #151515;
         }
-        .plugin-slideshow img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .plugin-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+        .plugin-gallery::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 3px;
+        }
+        .plugin-gallery img {
+            height: 60px;
+            width: auto;
+            border-radius: 4px;
+            border: 1px solid #333;
+            transition: all 0.2s ease;
+            cursor: pointer;
             object-fit: cover;
-            opacity: 0;
-            animation: fadeSlide3 12s infinite;
         }
-        .plugin-slideshow img:nth-child(1) { animation-delay: 0s; }
-        .plugin-slideshow img:nth-child(2) { animation-delay: 4s; }
-        .plugin-slideshow img:nth-child(3) { animation-delay: 8s; }
-
-        @keyframes fadeSlide3 {
-            0% { opacity: 0; transform: scale(1.05); }
-            5% { opacity: 1; transform: scale(1); }
-            30% { opacity: 1; transform: scale(1); }
-            35% { opacity: 0; transform: scale(1.05); }
-            100% { opacity: 0; transform: scale(1.05); }
+        .plugin-gallery img:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -221,12 +221,14 @@
 
                 <!-- Graph Editor App -->
                 <div class="plugin-card">
-                    <div class="plugin-slideshow">
-                        <img src="GRAPHEDITOR.png" alt="Graph Editor Cover">
-                        <img src="grapheditorindex2.png" alt="Premiere Pro Interface">
-                        <img src="grapheditorafter1.png" alt="After Effects Interface">
+                    <img src="GRAPHEDITOR.png" alt="Graph Editor UI" class="plugin-cover" style="object-fit: cover;">
+                    <div class="plugin-gallery">
+                        <a href="GRAPHEDITOR.png" target="_blank"><img src="GRAPHEDITOR.png" alt="Graph Editor Cover"></a>
+                        <a href="grapheditorindex2.png" target="_blank"><img src="grapheditorindex2.png" alt="Premiere Pro UI"></a>
+                        <a href="grapheditorafter1.png" target="_blank"><img src="grapheditorafter1.png" alt="After Effects UI 1"></a>
+                        <a href="grapheditorafter2.png" target="_blank"><img src="grapheditorafter2.png" alt="After Effects UI 2"></a>
                     </div>
-                    <div class="plugin-info">
+                    <div class="plugin-info" style="padding-top: 15px;">
                         <h3 class="plugin-title">GRAPH EDITOR</h3>
                         <p class="plugin-desc">A completely free, responsive extension for <strong style="color: #ffcc00; font-size: 1.05em; text-shadow: 0 0 5px rgba(255, 204, 0, 0.4);">After Effects & Premiere Pro</strong>. Features advanced speed and value curves, keyframe controls, the ability to save/delete curves, and a favorites system to speed up your edits.</p>
                         
