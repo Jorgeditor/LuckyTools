@@ -5,7 +5,7 @@ let lines = fs.readFileSync('index.html', 'utf8').split('\n');
 lines[137] = '            content: "\\2022";';
 lines[278] = '                        <p>LuckyTools is an all-in-one premium plugin for Adobe Premiere Pro, packing multiple integrated panels designed to automate tedious tasks, streamline your workflow, and let you focus on what really matters: your creativity. Everything is a shortcut away &#9889;</p>';
 lines[389] = '                        <p>Transparency is key: LuckyTools was built from the ground up with AI assistance. While it is an optimized and stable tool, it\'s important to understand that it may not be as polished as software developed by large teams over many years. Because it was created with the help of AI, you might run into some quirks or minor bugs that wouldn\'t be there in massive corporate tools.</p>';
-lines[400] = '                        <p>It does not intend to. The focus with LuckyTools is to group everyday functions to speed up workflows quickly and easily. Because of this, the tools are straightforward in terms of configuration and depth&mdash;the goal is to maintain ease of use without overwhelming settings or complex menus.</p>';
+lines[400] = '                        <p>It does not intend to. The focus with LuckyTools is to group everyday functions to speed up workflows quickly and easily. Because of this, the tools are straightforward in terms of configuration and do not offer great depth&mdash;the goal is to maintain ease of use without overwhelming settings or complex menus.</p>';
 
 // Badges
 lines[738] = '                        <span>Workflow &bull; Speed</span>';
